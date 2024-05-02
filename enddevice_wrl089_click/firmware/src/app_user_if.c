@@ -108,10 +108,10 @@ void APP_UserIfInit(void){
 
 /* *****************************************************************************
  Summary:
- Tasks the user interface application. Handles button presses and LED toggles.
+ Tasks the user interface application. Handles button presses and LoRaWANdemosend message call.
 
  Description:
- This has a state machine that handles the button presses and LED toggles.
+ This has a state machine that handles the button presses and LoRaWANdemosend message call.
 
  */
 SYSTEM_TaskStatus_t APP_UserIfTask(void)
@@ -122,7 +122,7 @@ SYSTEM_TaskStatus_t APP_UserIfTask(void)
         {
             APP_UserIfInit();
             userIfState = USERIF_SERVICE_TASKS;
-            printf("APP_USER_IF INITIALIZED\r\n");
+            //printf("APP_USER_IF INITIALIZED\r\n");
             break;
         }
 
@@ -132,14 +132,13 @@ SYSTEM_TaskStatus_t APP_UserIfTask(void)
             
             if(K1_STATE() == 0)
             {
-                //LED1_ON();
                 printf("Button ON\r\n");
             }
             else
             {
-                //LED1_OFF();
+                
             }
-            //LED2_TOGGLE();
+            
             break;
         }
         
@@ -165,11 +164,6 @@ int buttonPressHandle(void){
     LED3_ON();
     printf("Button K1 PA28 pressed. Interrupt callback executing...\r\n");
     LorawanStatus_t lwstat;
-    /*StackRetStatus_t stackReturnStatus;
-    static LorawanSendReq_t lorawanSendReq; //Must be available outside of function
-    uint32_t fcntup;
-    uint8_t datarate;
-    char buf[255];*/
 
     LORAWAN_GetAttr(LORAWAN_STATUS, NULL, &lwstat);
 

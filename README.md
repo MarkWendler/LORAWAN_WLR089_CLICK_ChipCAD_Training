@@ -1,4 +1,4 @@
-# WLR089-click_LORAWAN_H3 End device demo
+# WLR089-click ChipCAD training demo
 This repo containing a simplified demo from Microchip official LORAWAN stack repo.
 https://github.com/MicrochipTech/ATSAMR34_LORAWAN_H3
 
@@ -10,13 +10,38 @@ Target board WLR089-click from ChipCAD Ltd. (https://www.chipcad.hu/)
 1. Download and install [MPLAB® X IDE v6.15 tested](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
 2. Download and install [MPLAB XC32 Compiler v4.35 tested](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
 3. Clone this repo
-4. Connect HW to EDBG-USB (on board programmer/debugger)
+4. Connect HW to PICkit 5 to ICSP connector(CS5)
 5. Build and Program the device from MPLAB X IDE under **Production -> Make and Program Device**
-6. LED2 (GREEN) should start to blink with 1 Hz after programming is succesful
-7. Connect to the virtual com port with a serial communication program (EDBG-USB built-in USB-UART functionality) 
+6. Open a terminal software
+6. Connect to the virtual com port with a serial communication program
    1.  115200-8-N-1 
 8. Observe the output on the terminal
 
+Demo application use DemoJoin paramteres. These can be modified in configuration.h (Header Files->config->default->configuration.h lines:227-229(OTAA))
+
+First LoRaWAN activation is not automatically need to use serial port commands in application menu. 
+After first successfull LoRaWAN join activation PDS save parameters and after HW reset reload it, don't need rejoin. 
+This can be interrupted by any character sent to the serial port within 5 seconds after the HW reset.
+
+There are 2 options to send uplink message.
+	1. In application menu 
+	2. Pushing K1 button
+Message contains, the LED states and the measured temerature in Celsius and Fahrenheit also.
+	0x30	Blue and Green off
+	0x31	Blue on and Green off
+	0x32	Blue off and Green on
+	0x33	Blue and Green on
+	
+LED states can be modified thru downlink message to the PORT #1.
+	0x30	Blue and Green off
+	0x31	Blue on and Green off
+	0x32	Blue off and Green on
+	0x33	Blue and Green on 
+	
+ATECC608 crypto part can be enable in configuration.h, need to delete the comment in line 249. In this case when startup ATECC join parameters loaded automatically.
+
+After first successfull LoRaWAN join activation PDS save parameters and after HW reset reload it, don't need rejoin. 
+This can be interrupted by any character sent to the serial port within 5 seconds after the HW reset.
 
 ```
 Last reset cause: External Reset
@@ -38,7 +63,3 @@ Enter your choice:
 
 > Note #2: If using ATECC608 as crypto companion for the Join process, checkout the following resources to get more details :
 > - [Develop with the SAM R34 LoRa SiP and WLR089U0 Module with Microchip LoRaWAN stack on TTI join server](https://github.com/MicrochipTech/atsamr34_ecc608a_tti)
-> - [Develop with the SAM R34 LoRa SiP and WLR089U0 Module with Microchip LoRaWAN stack on Actility join server](https://github.com/MicrochipTech/atsamr34_ecc608a_actility)
-> - [Secure Authentication with SAMR34 & ATECC608 and The Things Industries’s Join Server](https://github.com/MicrochipTech/secure_lorawan_with_tti)
-
-

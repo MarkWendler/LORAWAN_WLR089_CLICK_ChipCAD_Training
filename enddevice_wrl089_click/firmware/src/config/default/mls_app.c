@@ -379,7 +379,6 @@ StackRetStatus_t MlsAppSendReq(void)
         req = &mlsAppSendReq;
         mlsAppBuf[mlsAppBufLen] = '\0';
         printf("Sent Data: %s \r\n", mlsAppBuf);
-        //printf("Temperature Data: %s,\r\n", mlsAppBuf);
         printf("\r\nBLUE state : %d", appLED1) ;
         printf("\r\nGREEN state : %d", appLED2) ;
     }
