@@ -1,4 +1,4 @@
-# WLR089-click ChipCAD training demo
+﻿# WLR089-click ChipCAD training demo
 This repo containing a simplified demo from Microchip official LORAWAN stack repo.
 https://github.com/MicrochipTech/ATSAMR34_LORAWAN_H3
 
@@ -13,7 +13,7 @@ Target board is WLR089-click from ChipCAD Ltd. (https://www.chipcad.hu/)
 4. Connect HW to PICkit 5 to ICSP connector(CS5)
 5. Build and Program the device from MPLAB X IDE under **Production -> Make and Program Device**
 6. Open a terminal software
-6. Connect to the virtual com port with a serial communication program
+7. Connect to the virtual com port with a serial communication program
    1.  115200-8-N-1 
 8. Observe the output on the terminal
 
@@ -24,19 +24,20 @@ After first successfull LoRaWAN join activation PDS save parameters and after HW
 This can be interrupted by any character sent to the serial port within 5 seconds after the HW reset.
 
 There are 2 options to send uplink message.
-	1. In application menu 
-	2. Pushing K1 button
+1. In application menu	
+2. Pushing K1 button
+	
 Message contains, the LED states and the measured temerature in Celsius and Fahrenheit also.
-	0x30	Blue and Green off
-	0x31	Blue on and Green off
-	0x32	Blue off and Green on
-	0x33	Blue and Green on
+-	0x30	Blue and Green off
+-	0x31	Blue on and Green off
+-	0x32	Blue off and Green on
+-	0x33	Blue and Green on
 	
 LED states can be modified thru downlink message to the PORT #1.
-	0x30	Blue and Green off
-	0x31	Blue on and Green off
-	0x32	Blue off and Green on
-	0x33	Blue and Green on 
+-	0x30	Blue and Green off
+-	0x31	Blue on and Green off
+-	0x32	Blue off and Green on
+-	0x33	Blue and Green on
 	
 Demo support LW1.0.4 and LW1.0.3, 1.0.2 and 1.0.1 combatible network servers. Need to be select in configuration.h line: #241-245  	
 
