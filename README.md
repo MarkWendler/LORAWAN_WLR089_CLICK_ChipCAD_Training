@@ -38,6 +38,14 @@ LED states can be modified thru downlink message to the PORT #1.
 	0x32	Blue off and Green on
 	0x33	Blue and Green on 
 	
+Demo support LW1.0.4 and LW1.0.3, 1.0.2 and 1.0.1 combatible network servers. Need to be select in configuration.h line: #241-245  	
+
+/* To join with NS supporting LW1.0.4 */
+#define APP_JOIN_NONCE_TYPE                     JOIN_NONCE_INCREMENTAL
+
+/* To join with NS supporting LW1.0.3, LW1.0.2, LW1.0.1 */
+//#define APP_JOIN_NONCE_TYPE                     JOIN_NONCE_RANDOM
+
 
 ```
 Last reset cause: External Reset
