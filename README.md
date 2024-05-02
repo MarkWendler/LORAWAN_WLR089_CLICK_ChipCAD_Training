@@ -38,10 +38,6 @@ LED states can be modified thru downlink message to the PORT #1.
 	0x32	Blue off and Green on
 	0x33	Blue and Green on 
 	
-ATECC608 crypto part can be enable in configuration.h, need to delete the comment in line 249. In this case when startup ATECC join parameters loaded automatically.
-
-After first successfull LoRaWAN join activation PDS save parameters and after HW reset reload it, don't need rejoin. 
-This can be interrupted by any character sent to the serial port within 5 seconds after the HW reset.
 
 ```
 Last reset cause: External Reset
