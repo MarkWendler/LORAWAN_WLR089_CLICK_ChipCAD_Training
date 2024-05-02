@@ -1,0 +1,45 @@
+# folders to ignore where *.X is root of repository
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+debug/
+run/
+.generated_files/
+log/
+# folder to ignore where *.X is not root of repository
+**/*.X/build/
+**/*.X/nbbuild/
+**/*.X/dist/
+**/*.X/nbdist/
+**/*.X/nb-gradle/
+**/*.X/debug/
+**/*.X/run/
+**/*.X/.generated_files/
+#other folders and files to ignore
+**/nbproject/private
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+**/nbproject/project.properties
+# motorbench files to ignore
+*motorbench-log.0.0.txt
+*motorbench-log.0.0.txt.lck
+# extensions to ignore
+*.bak
+*.dat
+*.exe
+*.bkp
+*.7z
+*.h_backup
+*.c_backup
+*.backup
+*.c_backup
+*.log
+*.log
+*.o
+*.lck
+*.elf
+*.map
+*.d
+*.bak*

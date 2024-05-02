@@ -1,0 +1,2619 @@
+{
+    "version": "1",
+    "configurations": [
+        {
+            "name": "WLR089U0",
+            "targetDevice": "WLR089U0",
+            "imageType": "application",
+            "platformTool": "WLR089U0-edbg",
+            "packs": [
+                {
+                    "name": "WLR089_DFP",
+                    "vendor": "Microchip",
+                    "version": "1.1.26"
+                },
+                {
+                    "name": "CMSIS",
+                    "vendor": "ARM",
+                    "version": "5.8.0"
+                }
+            ],
+            "fileSet": "root",
+            "outputFiles": [
+                {
+                    "name": "build",
+                    "toolchain": "WLR089U0-XC32",
+                    "imagePath": "./out/enddevice_demo_sam_r34_xpro/WLR089U0.elf"
+                }
+            ]
+        },
+        {
+            "name": "SAMR34",
+            "targetDevice": "ATSAMR34J18B",
+            "imageType": "application",
+            "platformTool": "SAMR34-pickit5",
+            "packs": [
+                {
+                    "name": "CMSIS",
+                    "vendor": "ARM",
+                    "version": "5.8.0"
+                },
+                {
+                    "name": "SAMR34_DFP",
+                    "vendor": "Microchip",
+                    "version": "2.1.61"
+                }
+            ],
+            "fileSet": "root",
+            "outputFiles": [
+                {
+                    "name": "build",
+                    "toolchain": "SAMR34-XC32",
+                    "imagePath": "./out/enddevice_demo_sam_r34_xpro/SAMR34.elf"
+                }
+            ]
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "WLR089U0-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32-toolchain@v4.35",
+            "properties": {
+                "toolchainName": "XC32",
+                "toolchainVersion": "v4.35",
+                "xc32-compiler": "WLR089U0-C32",
+                "xc32-cpp": "WLR089U0-C32CPP",
+                "xc32-as": "WLR089U0-C32-AS",
+                "xc32-ar": "WLR089U0-C32-AR",
+                "xc32-ld": "WLR089U0-C32-LD",
+                "xc32-co": "WLR089U0-C32-CO",
+                "xc32-global": "WLR089U0-C32Global"
+            }
+        },
+        {
+            "name": "WLR089U0-C32",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-compiler@v4.35",
+            "properties": {
+                "additional-warnings": true,
+                "addresss-attribute-use": false,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exclude-floating-point": false,
+                "extra-include-directories": "../../../source;../src;../src/config/default;../src/config/default/MLS/;../src/config/default/MLS/common/;../src/config/default/MLS/hal/;../src/config/default/MLS/mac/;../src/config/default/MLS/module_config/;../src/config/default/MLS/pmm/;../src/config/default/MLS/private/mac/;../src/config/default/MLS/private/tal/;../src/config/default/MLS/regparams/;../src/config/default/MLS/regparams/multiband/;../src/config/default/MLS/sal/;../src/config/default/MLS/services/aes/;../src/config/default/MLS/services/pds/;../src/config/default/MLS/services/sw_timer/;../src/config/default/MLS/sys/;../src/config/default/MLS/tal/;../src/config/default/MLS/tal/sx1276/;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl",
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "isolate-each-function": true,
+                "make-warnings-into-errors": false,
+                "optimization-level": "-Os",
+                "place-data-into-section": true,
+                "post-instruction-scheduling": "default",
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "BOARD_WLR089U0;ENABLE_PDS=1;HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;_DEBUG_=1",
+                "strict-ansi": false,
+                "support-ansi": false,
+                "tentative-definitions": "-fno-common",
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
+            }
+        },
+        {
+            "name": "WLR089U0-C32CPP",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-cpp@v4.35",
+            "properties": {
+                "additional-warnings": false,
+                "addresss-attribute-use": false,
+                "check-new": false,
+                "eh-specs": true,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exceptions": true,
+                "exclude-floating-point": false,
+                "extra-include-directories": "../src;../src/config/default;../src/packs/ATSAMR34J18B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include",
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "isolate-each-function": true,
+                "make-warnings-into-errors": false,
+                "optimization-level": "-O1",
+                "place-data-into-section": false,
+                "post-instruction-scheduling": "default",
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "",
+                "rtti": true,
+                "strict-ansi": false,
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
+            }
+        },
+        {
+            "name": "WLR089U0-C32-AS",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-as@v4.35",
+            "properties": {
+                "assembler-symbols": "",
+                "enable-symbols": true,
+                "exclude-floating-point-library": false,
+                "expand-macros": false,
+                "extra-include-directories-for-assembler": "",
+                "extra-include-directories-for-preprocessor": "",
+                "false-conditionals": false,
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "keep-locals": false,
+                "list-assembly": false,
+                "list-source": false,
+                "list-symbols": false,
+                "oXC32asm-list-to-file": false,
+                "omit-debug-dirs": false,
+                "omit-forms": false,
+                "preprocessor-macros": "",
+                "warning-level": ""
+            }
+        },
+        {
+            "name": "WLR089U0-C32-AR",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-ar@v4.35",
+            "properties": {
+                "additional-options-chop-files": false
+            }
+        },
+        {
+            "name": "WLR089U0-C32-LD",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-ld@v4.35",
+            "properties": {
+                "additional-options-use-response-files": false,
+                "additional-options-write-sla": false,
+                "allocate-dinit": false,
+                "code-dinit": false,
+                "ebase-addr": "",
+                "enable-check-sections": false,
+                "exclude-floating-point-library": false,
+                "exclude-standard-libraries": false,
+                "extra-lib-directories": "",
+                "fill-flash-options-addr": "",
+                "fill-flash-options-const": "",
+                "fill-flash-options-how": "0",
+                "fill-flash-options-inc-const": "1",
+                "fill-flash-options-increment": "",
+                "fill-flash-options-seq": "",
+                "fill-flash-options-what": "0",
+                "generate-16-bit-code": false,
+                "generate-cross-reference-file": true,
+                "generate-micro-compressed-code": false,
+                "heap-size": "1024",
+                "input-libraries": "",
+                "kseg-length": "",
+                "kseg-origin": "",
+                "linker-symbols": "",
+                "map-file": "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",
+                "no-device-startup-code": true,
+                "no-startup-files": false,
+                "oXC32ld-extra-opts": "",
+                "optimization-level": "",
+                "preprocessor-macros": "",
+                "remove-unused-sections": true,
+                "report-memory-usage": true,
+                "serial-length": "",
+                "serial-origin": "",
+                "stack-size": "",
+                "symbol-stripping": "",
+                "trace-symbols": "",
+                "warn-section-align": true
+            }
+        },
+        {
+            "name": "WLR089U0-C32-CO",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-co@v4.35",
+            "properties": {
+                "coverage-enable": "",
+                "stack-guidance": false
+            }
+        },
+        {
+            "name": "WLR089U0-C32Global",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-global@v4.35",
+            "properties": {
+                "common-include-directories": "",
+                "gp-relative-option": "",
+                "legacy-libc": false,
+                "mdtcm": "",
+                "mitcm": "",
+                "mstacktcm": false,
+                "omit-pack-options": "1",
+                "relaxed-math": false,
+                "save-temps": false,
+                "stack-smashing": "",
+                "wpo-lto": false
+            }
+        },
+        {
+            "name": "tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:generic",
+            "properties": {
+                "AutoSelectMemRanges": "auto",
+                "SecureSegment.SegmentProgramming": "FullChipProgramming",
+                "ToolFirmwareFilePath": "Press to browse for a specific firmware version",
+                "ToolFirmwareOption.UpdateOptions": "ToolFirmwareOption.UseLatest",
+                "ToolFirmwareToolPack": "Press to select which tool pack to use",
+                "arm.use_vtor": false,
+                "arm.vtor_adr": "exception_table",
+                "communication.activationmode": "nohv",
+                "communication.interface": "swd",
+                "communication.interface.jtag": "2wire",
+                "communication.speed": "1.000",
+                "debugoptions.debug-startup": "Use system settings",
+                "debugoptions.reset-behaviour": "Use system settings",
+                "debugoptions.simultaneous.debug": false,
+                "debugoptions.useswbreakpoints": false,
+                "event.recorder.enabled": false,
+                "event.recorder.scvd.files": "",
+                "firmware.path": "Press to browse for a specific firmware version",
+                "firmware.toolpack": "Press to select which tool pack to use",
+                "firmware.update.action": "firmware.update.use.latest",
+                "freeze.timers": false,
+                "lastid": "",
+                "loader.board_file": "${ProjectDir}/board.xboard",
+                "memories.aux": false,
+                "memories.bootflash": true,
+                "memories.configurationmemory": true,
+                "memories.configurationmemory2": true,
+                "memories.dataflash": true,
+                "memories.eeprom": true,
+                "memories.exclude.configurationmemory": true,
+                "memories.flashdata": true,
+                "memories.id": true,
+                "memories.instruction.ram.ranges": "${memories.instruction.ram.ranges}",
+                "memories.programmemory": true,
+                "memories.programmemory.ranges": "0-3ffff",
+                "memories.rww": true,
+                "poweroptions.powerenable": false,
+                "programmerToGoFilePath": "/home/mark/Projects/LORAWAN_WLR089_EndDevice/sam_r34_xpro/firmware/enddevice_demo_sam_r34_xpro.X/debug/WLR089U0/enddevice_demo_sam_r34_xpro_ptg",
+                "programmerToGoImageName": "enddevice_demo_sam_r34_xpro_ptg",
+                "programoptions.donoteraseauxmem": false,
+                "programoptions.eraseb4program": true,
+                "programoptions.ledbrightness": "5",
+                "programoptions.pgcconfig": "pull down",
+                "programoptions.pgcresistor.value": "4.7",
+                "programoptions.pgdconfig": "pull down",
+                "programoptions.pgdresistor.value": "4.7",
+                "programoptions.pgmentry.voltage": "low",
+                "programoptions.pgmspeed": "Med",
+                "programoptions.preservedataflash": false,
+                "programoptions.preservedataflash.ranges": "${memories.dataflash.default}",
+                "programoptions.preserveeeprom": false,
+                "programoptions.preserveeeprom.ranges": "",
+                "programoptions.preserveprogram.ranges": "",
+                "programoptions.preserveprogramrange": false,
+                "programoptions.preserveuserid": false,
+                "programoptions.program.otpconfig": false,
+                "programoptions.programcalmem": false,
+                "programoptions.programuserotp": false,
+                "programoptions.testmodeentrymethod": "VDDFirst",
+                "ptgProgramImage": true,
+                "ptgSendImage": true,
+                "script.has_reset": true,
+                "script.log_level": "1",
+                "script.reset_delay": "0",
+                "script.show_output": false,
+                "toolpack.updateoptions": "toolpack.updateoptions.uselatestoolpack",
+                "toolpack.updateoptions.packversion": "Press to select which tool pack to use",
+                "voltagevalue": "3.25",
+                "x.erase.clearprot": true
+            }
+        },
+        {
+            "name": "WLR089U0-tool-base",
+            "extend": "tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:generic",
+            "properties": {}
+        },
+        {
+            "name": "WLR089U0-atmelice",
+            "extend": "WLR089U0-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:atmelice",
+            "properties": {
+                "communication.speed": "4.000",
+                "memories.programmemory.ranges": "0x400000-0x5fffff",
+                "programoptions.eraseb4program": false
+            }
+        },
+        {
+            "name": "WLR089U0-edbg",
+            "extend": "WLR089U0-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:edbg",
+            "properties": {}
+        },
+        {
+            "name": "WLR089U0-pickit3",
+            "extend": "WLR089U0-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:pickit3",
+            "properties": {
+                "ADC 1": true,
+                "CHANGE NOTICE": true,
+                "COMPARATOR": true,
+                "CTMU": true,
+                "DMA": true,
+                "Freeze All Other Peripherals": true,
+                "I2C1": true,
+                "I2C2": true,
+                "INPUT CAPTURE 1": true,
+                "INPUT CAPTURE 2": true,
+                "INPUT CAPTURE 3": true,
+                "INPUT CAPTURE 4": true,
+                "INPUT CAPTURE 5": true,
+                "INTERRUPT CONTROL": true,
+                "OUTPUT COMPARE 1": true,
+                "OUTPUT COMPARE 2": true,
+                "OUTPUT COMPARE 3": true,
+                "OUTPUT COMPARE 4": true,
+                "OUTPUT COMPARE 5": true,
+                "PARALLEL MASTER/SLAVE PORT": true,
+                "REAL TIME CLOCK": true,
+                "SPI/I2S 1": true,
+                "SPI/I2S 2": true,
+                "TIMER1": true,
+                "TIMER2": true,
+                "TIMER3": true,
+                "TIMER4": true,
+                "TIMER5": true,
+                "ToolFirmwareOption.UseLatestFirmware": true,
+                "UART1": true,
+                "UART2": true,
+                "hwtoolclock.frcindebug": false,
+                "memories.programmemory.end": "0x1d003fff",
+                "memories.programmemory.start": "0x1d000000",
+                "programmertogo.imagename": "",
+                "programoptions.pgmspeed": "2",
+                "programoptions.preserveprogramrange.end": "0x1d003fff",
+                "programoptions.preserveprogramrange.start": "0x1d000000",
+                "programoptions.testmodeentrymethod": "VPPFirst",
+                "programoptions.usehighvoltageonmclr": false,
+                "programoptions.uselvpprogramming": false
+            }
+        },
+        {
+            "name": "WLR089U0-pk4hybrid",
+            "extend": "WLR089U0-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:pk4hybrid",
+            "properties": {}
+        },
+        {
+            "name": "WLR089U0-simulator",
+            "extend": "WLR089U0-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:simulator",
+            "properties": {
+                "codecoverage.enabled": "Disable",
+                "codecoverage.enableoutputtofile": false,
+                "codecoverage.outputfile": "",
+                "oscillator.auxfrequency": "120",
+                "oscillator.auxfrequencyunit": "Mega",
+                "oscillator.frequency": "1",
+                "oscillator.frequencyunit": "Mega",
+                "oscillator.rcfrequency": "250",
+                "oscillator.rcfrequencyunit": "Kilo",
+                "periphADC1.altscl": false,
+                "periphADC1.minTacq": "",
+                "periphADC1.tacqunits": "microseconds",
+                "periphADC2.altscl": false,
+                "periphADC2.minTacq": "",
+                "periphADC2.tacqunits": "microseconds",
+                "periphComp1.gte": "gt",
+                "periphComp2.gte": "gt",
+                "periphComp3.gte": "gt",
+                "periphComp4.gte": "gt",
+                "periphComp5.gte": "gt",
+                "periphComp6.gte": "gt",
+                "reset.scl": false,
+                "reset.type": "MCLR",
+                "tracecontrol.include.timestamp": "summarydataenabled",
+                "tracecontrol.select": "0",
+                "tracecontrol.stallontracebufferfull": false,
+                "tracecontrol.timestamp": "0",
+                "tracecontrol.tracebufmax": "546000",
+                "tracecontrol.tracefile": "defmplabxtrace.log",
+                "tracecontrol.traceresetonrun": false,
+                "uart0io.output": "window",
+                "uart0io.outputfile": "",
+                "uart0io.uartioenabled": false,
+                "uart1io.output": "window",
+                "uart1io.outputfile": "",
+                "uart1io.uartioenabled": false,
+                "uart2io.output": "window",
+                "uart2io.outputfile": "",
+                "uart2io.uartioenabled": false,
+                "uart3io.output": "window",
+                "uart3io.outputfile": "",
+                "uart3io.uartioenabled": false,
+                "uart4io.output": "window",
+                "uart4io.outputfile": "",
+                "uart4io.uartioenabled": false,
+                "uart5io.output": "window",
+                "uart5io.outputfile": "",
+                "uart5io.uartioenabled": false,
+                "uart6io.output": "window",
+                "uart6io.outputfile": "",
+                "uart6io.uartioenabled": false,
+                "usart0io.output": "window",
+                "usart0io.outputfile": "",
+                "usart0io.uartioenabled": false,
+                "usart1io.output": "window",
+                "usart1io.outputfile": "",
+                "usart1io.uartioenabled": false,
+                "usart2io.output": "window",
+                "usart2io.outputfile": "",
+                "usart2io.uartioenabled": false,
+                "usart3io.output": "window",
+                "usart3io.outputfile": "",
+                "usart3io.uartioenabled": false,
+                "usart4io.output": "window",
+                "usart4io.outputfile": "",
+                "usart4io.uartioenabled": false,
+                "usartc0io.output": "window",
+                "usartc0io.outputfile": "",
+                "usartc0io.uartioenabled": false,
+                "usartc1io.output": "window",
+                "usartc1io.outputfile": "",
+                "usartc1io.uartioenabled": false,
+                "usartd0io.output": "window",
+                "usartd0io.outputfile": "",
+                "usartd0io.uartioenabled": false,
+                "usartd1io.output": "window",
+                "usartd1io.outputfile": "",
+                "usartd1io.uartioenabled": false,
+                "usarte0io.output": "window",
+                "usarte0io.outputfile": "",
+                "usarte0io.uartioenabled": false,
+                "usarte1io.output": "window",
+                "usarte1io.outputfile": "",
+                "usarte1io.uartioenabled": false,
+                "usarte2io.output": "window",
+                "usarte2io.outputfile": "",
+                "usarte2io.uartioenabled": false,
+                "usartf0io.output": "window",
+                "usartf0io.outputfile": "",
+                "usartf0io.uartioenabled": false,
+                "usartf1io.output": "window",
+                "usartf1io.outputfile": "",
+                "usartf1io.uartioenabled": false,
+                "warningmessagebreakoptions.W0001_CORE_BITREV_MODULO_EN": "report",
+                "warningmessagebreakoptions.W0002_CORE_SECURE_MEMORYACCESS": "report",
+                "warningmessagebreakoptions.W0003_CORE_SW_RESET": "report",
+                "warningmessagebreakoptions.W0004_CORE_WDT_RESET": "report",
+                "warningmessagebreakoptions.W0005_CORE_IOPUW_RESET": "report",
+                "warningmessagebreakoptions.W0006_CORE_CODE_GUARD_PFC_RESET": "report",
+                "warningmessagebreakoptions.W0007_CORE_DO_LOOP_STACK_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0008_CORE_DO_LOOP_STACK_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0009_CORE_NESTED_DO_LOOP_RANGE": "report",
+                "warningmessagebreakoptions.W0010_CORE_SIM32_ODD_WORDACCESS": "report",
+                "warningmessagebreakoptions.W0011_CORE_SIM32_UNIMPLEMENTED_RAMACCESS": "report",
+                "warningmessagebreakoptions.W0012_CORE_STACK_OVERFLOW_RESET": "report",
+                "warningmessagebreakoptions.W0013_CORE_STACK_UNDERFLOW_RESET": "report",
+                "warningmessagebreakoptions.W0014_CORE_INVALID_OPCODE": "report",
+                "warningmessagebreakoptions.W0015_CORE_INVALID_ALT_WREG_SET": "report",
+                "warningmessagebreakoptions.W0016_CORE_STACK_ERROR": "report",
+                "warningmessagebreakoptions.W0017_CORE_ODD_RAMWORDACCESS": "report",
+                "warningmessagebreakoptions.W0018_CORE_UNIMPLEMENTED_RAMACCESS": "report",
+                "warningmessagebreakoptions.W0019_CORE_UNIMPLEMENTED_PROMACCESS": "report",
+                "warningmessagebreakoptions.W0020_CORE_ACCESS_NOTIN_X_SPACE": "report",
+                "warningmessagebreakoptions.W0021_CORE_ACCESS_NOTIN_Y_SPACE": "report",
+                "warningmessagebreakoptions.W0022_CORE_XMODEND_LESS_XMODSRT": "report",
+                "warningmessagebreakoptions.W0023_CORE_YMODEND_LESS_YMODSRT": "report",
+                "warningmessagebreakoptions.W0024_CORE_BITREV_MOD_IS_ZERO": "report",
+                "warningmessagebreakoptions.W0025_CORE_HARD_TRAP": "report",
+                "warningmessagebreakoptions.W0026_CORE_UNIMPLEMENTED_MEMORYACCESS": "report",
+                "warningmessagebreakoptions.W0027_CORE_UNIMPLEMENTED_EDSACCESS": "report",
+                "warningmessagebreakoptions.W0028_TBLRD_WORM_CONFIG_MEMORY": "report",
+                "warningmessagebreakoptions.W0029_TBLRD_DEVICE_ID": "report",
+                "warningmessagebreakoptions.W0030_CORE_UNIMPLEMENTED_MEMORY_ACCESS": "report",
+                "warningmessagebreakoptions.W0031_BSLIM_INSUFFICIENT_BOOT_SEGMENT": "report",
+                "warningmessagebreakoptions.W0032_BSLIM_LIMITS_EXCEEDS_PROG_MEMORY": "report",
+                "warningmessagebreakoptions.W0033_CORE_UNPREDICTABLE_OPCODE": "report",
+                "warningmessagebreakoptions.W0034_CORE_UNALIGNED_MEMORY_ACCESS": "report",
+                "warningmessagebreakoptions.W0035_CORE_UNIMPLEMENTED_RAMACCESS_NOTRAP": "report",
+                "warningmessagebreakoptions.W0040_FPU_DIFF_CP10_CP11": "report",
+                "warningmessagebreakoptions.W0041_FPU_ACCESS_DENIED": "report",
+                "warningmessagebreakoptions.W0042_FPU_PRIVILEGED_ACCESS_ONLY": "report",
+                "warningmessagebreakoptions.W0043_FPU_CP_RESERVED_VALUE": "report",
+                "warningmessagebreakoptions.W0044_FPU_OUT_OF_RANGE": "report",
+                "warningmessagebreakoptions.W0051_INSTRUCTION_DIV_NOT_ENOUGH_REPEAT": "report",
+                "warningmessagebreakoptions.W0052_INSTRUCTION_DIV_TOO_MANY_REPEAT": "report",
+                "warningmessagebreakoptions.W0053_INVALID_INTCON_VS_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0101_SIM_UPDATE_FAILED": "report",
+                "warningmessagebreakoptions.W0102_SIM_PERIPH_MISSING": "report",
+                "warningmessagebreakoptions.W0103_SIM_PERIPH_FAILED": "report",
+                "warningmessagebreakoptions.W0104_SIM_FAILED_TO_INIT_TOOL": "report",
+                "warningmessagebreakoptions.W0105_SIM_INVALID_FIELD": "report",
+                "warningmessagebreakoptions.W0106_SIM_PERIPH_PARTIAL_SUPPORT": "report",
+                "warningmessagebreakoptions.W0107_SIM_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0108_SIM_RESERVED_SETTING": "report",
+                "warningmessagebreakoptions.W0109_SIM_PERIPHERAL_IN_DEVELOPMENT": "report",
+                "warningmessagebreakoptions.W0110_SIM_UNEXPECTED_EVENT": "report",
+                "warningmessagebreakoptions.W0111_SIM_UNSUPPORTED_SELECTION": "report",
+                "warningmessagebreakoptions.W0112_SIM_INVALID_OPERATION": "report",
+                "warningmessagebreakoptions.W0113_SIM_WRITE_TO_PROTECTED_SFR": "report",
+                "warningmessagebreakoptions.W0114_SIM_INVALID_KEY": "report",
+                "warningmessagebreakoptions.W0115_SIM_FAILED_TO_PARSE_DEVICE_FILE": "report",
+                "warningmessagebreakoptions.W0116_SIM_STACK_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0117_SIM_STACK_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0118_SIM_INVALID_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0119_SIM_SAMPLING_RATE_VIOLATION": "report",
+                "warningmessagebreakoptions.W0201_ADC_NO_STIMULUS_FILE": "report",
+                "warningmessagebreakoptions.W0202_ADC_GO_DONE_BIT": "report",
+                "warningmessagebreakoptions.W0203_ADC_MINIMUM_2_TAD": "report",
+                "warningmessagebreakoptions.W0204_ADC_TAD_TOO_SMALL": "report",
+                "warningmessagebreakoptions.W0205_ADC_UNEXPECTED_TRANSITION": "report",
+                "warningmessagebreakoptions.W0206_ADC_SAMP_TIME_TOO_SHORT": "report",
+                "warningmessagebreakoptions.W0207_ADC_NO_PINS_SCANNED": "report",
+                "warningmessagebreakoptions.W0208_ADC_UNSUPPORTED_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W0209_ADC_ANALOG_CHANNEL_DIGITAL": "report",
+                "warningmessagebreakoptions.W0210_ADC_ANALOG_CHANNEL_OUTPUT": "report",
+                "warningmessagebreakoptions.W0211_ADC_PIN_INVALID_CHANNEL": "report",
+                "warningmessagebreakoptions.W0212_ADC_BAND_GAP_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0213_ADC_RESERVED_SSRC": "report",
+                "warningmessagebreakoptions.W0214_ADC_POSITIVE_INPUT_DIGITAL": "report",
+                "warningmessagebreakoptions.W0215_ADC_POSITIVE_INPUT_OUTPUT": "report",
+                "warningmessagebreakoptions.W0216_ADC_NEGATIVE_INPUT_DIGITAL": "report",
+                "warningmessagebreakoptions.W0217_ADC_NEGATIVE_INPUT_OUTPUT": "report",
+                "warningmessagebreakoptions.W0218_ADC_REFERENCE_HIGH_DIGITAL": "report",
+                "warningmessagebreakoptions.W0219_ADC_REFERENCE_HIGH_OUTPUT": "report",
+                "warningmessagebreakoptions.W0220_ADC_REFERENCE_LOW_DIGITAL": "report",
+                "warningmessagebreakoptions.W0221_ADC_REFERENCE_LOW_OUTPUT": "report",
+                "warningmessagebreakoptions.W0222_ADC_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0223_ADC_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0224_ADC_CTMU_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0225_ADC_INVALID_CH0S": "report",
+                "warningmessagebreakoptions.W0226_ADC_VBAT_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0227_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0228_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0229_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0230_ADC_TRIGSEL_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0231_ADC_NOT_WARMED": "report",
+                "warningmessagebreakoptions.W0232_ADC_CALIBRATION_ABORTED": "report",
+                "warningmessagebreakoptions.W0233_ADC_CORE_POWERED_EARLY": "report",
+                "warningmessagebreakoptions.W0234_ADC_ALREADY_CALIBRATING": "report",
+                "warningmessagebreakoptions.W0235_ADC_CAL_TYPE_CHANGED": "report",
+                "warningmessagebreakoptions.W0236_ADC_CAL_INVALIDATED": "report",
+                "warningmessagebreakoptions.W0237_ADC_UNKNOWN_DATASHEET": "report",
+                "warningmessagebreakoptions.W0238_ADC_INVALID_SFR_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0239_ADC_UNSUPPORTED_INPUT": "report",
+                "warningmessagebreakoptions.W0240_ADC_NOT_CALIBRATED": "report",
+                "warningmessagebreakoptions.W0241_ADC_FRACTIONAL_NOT_ALLOWED": "report",
+                "warningmessagebreakoptions.W0242_ADC_BG_INT_BEFORE_PWR": "report",
+                "warningmessagebreakoptions.W0243_ADC_INVALID_TAD": "report",
+                "warningmessagebreakoptions.W0244_ADC_CONVERSION_ABORTED": "report",
+                "warningmessagebreakoptions.W0245_ADC_BUFREGEN_NOT_ALLOWED": "report",
+                "warningmessagebreakoptions.W0246_ADC_ACCUMULATION_BAD_RESSEL": "report",
+                "warningmessagebreakoptions.W0247_ADC_CONVERSION_BAD_RESSEL": "report",
+                "warningmessagebreakoptions.W0248_ADC_WR_BEFORE_KEY_SEQ": "report",
+                "warningmessagebreakoptions.W0400_PWM_PWM_FASTER_THAN_FOSC": "report",
+                "warningmessagebreakoptions.W0600_WDT_2ND_WDT_MR_WRITE": "report",
+                "warningmessagebreakoptions.W0601_WDT_EXPIRED": "report",
+                "warningmessagebreakoptions.W0601_WDT_RESET_OUTSIDE_WINDOW": "report",
+                "warningmessagebreakoptions.W0700_CLC_GENERAL_WARNING": "report",
+                "warningmessagebreakoptions.W0701_CLC_CLCOUT_AS_INPUT": "report",
+                "warningmessagebreakoptions.W0702_CLC_CIRCULAR_LOOP": "report",
+                "warningmessagebreakoptions.W0800_ACC_INPUT_INVALID_CONFIG": "report",
+                "warningmessagebreakoptions.W0801_ACC_INPUT_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0802_ACC_INVERTED_WINDOW_LIMITS": "report",
+                "warningmessagebreakoptions.W0803_ACC_MISMATCHED_POS_INPUTS": "report",
+                "warningmessagebreakoptions.W0804_ACC_WINDOW_COMP_DISABLED": "report",
+                "warningmessagebreakoptions.W0805_ACC_WINDOW_COMPS_MODES": "report",
+                "warningmessagebreakoptions.W0806_ACC_FEATURE_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W10001_RESERVED_IRQ_HANDLER_INVOKED": "report",
+                "warningmessagebreakoptions.W10002_UNSUPPORTED_CLK_SOURCE": "report",
+                "warningmessagebreakoptions.W10101_UNSUPPORTED_CHANNEL_MODE": "report",
+                "warningmessagebreakoptions.W10102_UNSUPPORTED_CLK_SOURCE": "report",
+                "warningmessagebreakoptions.W10103_UNSUPPORTED_RECEIVER_FILTER": "report",
+                "warningmessagebreakoptions.W10301_NO_PORT_PINS_FOUND": "report",
+                "warningmessagebreakoptions.W10500_UNSUPPORTED_SOURCE": "report",
+                "warningmessagebreakoptions.W1201_DATAFLASH_MEM_OUTSIDE_RANGE": "report",
+                "warningmessagebreakoptions.W1202_DATAFLASH_ERASE_WHILE_LOCKED": "report",
+                "warningmessagebreakoptions.W1203_DATAFLASH_WRITE_WHILE_LOCKED": "report",
+                "warningmessagebreakoptions.W1401_DMA_PERIPH_NOT_AVAIL": "report",
+                "warningmessagebreakoptions.W1402_DMA_INVALID_IRQ": "report",
+                "warningmessagebreakoptions.W1403_DMA_INVALID_SFR": "report",
+                "warningmessagebreakoptions.W1404_DMA_INVALID_DMA_ADDR": "report",
+                "warningmessagebreakoptions.W1405_DMA_IRQ_DIR_MISMATCH": "report",
+                "warningmessagebreakoptions.W1600_PPS_INVALID_MAP": "report",
+                "warningmessagebreakoptions.W1601_PPS_INVALID_PIN_DESCRIPTION": "report",
+                "warningmessagebreakoptions.W1800_PWM_TIMER_SELECTION_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W1801_PWM_TIMER_SELECTION_BAD_CLOCK_INPUT": "report",
+                "warningmessagebreakoptions.W1802_PWM_TIMER_MISSING_PERSCALER_INFO": "report",
+                "warningmessagebreakoptions.W2001_INPUTCAPTURE_TMR3_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W2002_INPUTCAPTURE_CAPTURE_EMPTY": "report",
+                "warningmessagebreakoptions.W2003_INPUTCAPTURE_SYNCSEL_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W2004_INPUTCAPTURE_BAD_SYNC_SOURCE": "report",
+                "warningmessagebreakoptions.W2501_OUTPUTCOMPARE_SYNCSEL_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W2502_OUTPUTCOMPARE_BAD_SYNC_SOURCE": "report",
+                "warningmessagebreakoptions.W2503_OUTPUTCOMPARE_BAD_TRIGGER_SOURCE": "report",
+                "warningmessagebreakoptions.W2700_MPU_ILLEGAL_DREGION": "report",
+                "warningmessagebreakoptions.W2701_MPU_INVALID_REGION": "report",
+                "warningmessagebreakoptions.W3000_LPM_READ_PROTECTION_SECTION": "report",
+                "warningmessagebreakoptions.W3010_SPM_WRITE_PROTECTION_SECTION": "report",
+                "warningmessagebreakoptions.W6001_RTT_FORBIDDEN_RTPRES": "report",
+                "warningmessagebreakoptions.W6002_RTT_BAD_WRITING_ALMV": "report",
+                "warningmessagebreakoptions.W6003_RTT_BAD_WRITING_RTPRES": "report",
+                "warningmessagebreakoptions.W7001_SMT_CLK_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W7002_SMT_SIG_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W7003_SMT_WIN_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W8001_OSC_INVALID_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W8002_OSC_RESERVED_FEXTOSC": "report",
+                "warningmessagebreakoptions.W9001_TMR_GATE_AND_EXTCLOCK_ENABLED": "report",
+                "warningmessagebreakoptions.W9002_TMR_NO_PIN_AVAILABLE": "report",
+                "warningmessagebreakoptions.W9003_TMR_INVALID_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W9201_UART_TX_OVERFLOW": "report",
+                "warningmessagebreakoptions.W9202_UART_TX_CAPTUREFILE": "report",
+                "warningmessagebreakoptions.W9203_UART_TX_INVALIDINTERRUPTMODE": "report",
+                "warningmessagebreakoptions.W9204_UART_RX_EMPTY_QUEUE": "report",
+                "warningmessagebreakoptions.W9205_UART_TX_BADFILE": "report",
+                "warningmessagebreakoptions.W9206_UART_RESERVED_MODE": "report",
+                "warningmessagebreakoptions.W9207_UART_UNABLETOCLOSE_FILE": "report",
+                "warningmessagebreakoptions.W9401_CVREF_INVALIDSOURCESELECTION": "report",
+                "warningmessagebreakoptions.W9402_CVREF_INPUT_OUTPUTPINCONFLICT": "report",
+                "warningmessagebreakoptions.W9601_COMP_FVR_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9602_COMP_DAC_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9603_COMP_CVREF_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9604_COMP_SLOPE_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9605_COMP_PRG_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9607_COMP_DGTL_FLTR_OPTION_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9609_COMP_DGTL_FLTR_CLK_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9801_FVR_INVALID_MODE_SELECTION": "report",
+                "warningmessagebreakoptions.W9801_SCL_BAD_SUBTYPE_INDICATION": "report",
+                "warningmessagebreakoptions.W9802_SCL_FILE_NOT_FOUND": "report",
+                "warningmessagebreakoptions.W9803_SCL_FAILED_TO_READ_FILE": "report",
+                "warningmessagebreakoptions.W9804_SCL_UNRECOGNIZED_LABEL": "report",
+                "warningmessagebreakoptions.W9805_SCL_UNRECOGNIZED_VAR": "report",
+                "warningmessagebreakoptions.W9901_RTSP_INVALID_OPERATION_SELECTION": "report",
+                "warningmessagebreakoptions.W9902_RTSP_FLASH_PROGRAM_WRITE_PROTECTED": "report",
+                "warningmessagebreakoptions.displaywarningmessagesoption": "",
+                "warningmessagebreakoptions.warningmessages": "holdstate"
+            }
+        },
+        {
+            "name": "SAMR34-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32-toolchain@v4.35",
+            "properties": {
+                "toolchainName": "XC32",
+                "toolchainVersion": "v4.35",
+                "xc32-compiler": "SAMR34-C32",
+                "xc32-cpp": "SAMR34-C32CPP",
+                "xc32-as": "SAMR34-C32-AS",
+                "xc32-ar": "SAMR34-C32-AR",
+                "xc32-ld": "SAMR34-C32-LD",
+                "xc32-co": "SAMR34-C32-CO",
+                "xc32-global": "SAMR34-C32Global"
+            }
+        },
+        {
+            "name": "SAMR34-C32",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-compiler@v4.35",
+            "properties": {
+                "additional-warnings": true,
+                "addresss-attribute-use": false,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exclude-floating-point": false,
+                "extra-include-directories": "../../../source;../src;../src/config/default;../src/config/default/MLS/;../src/config/default/MLS/common/;../src/config/default/MLS/hal/;../src/config/default/MLS/mac/;../src/config/default/MLS/module_config/;../src/config/default/MLS/pmm/;../src/config/default/MLS/private/mac/;../src/config/default/MLS/private/tal/;../src/config/default/MLS/regparams/;../src/config/default/MLS/regparams/multiband/;../src/config/default/MLS/sal/;../src/config/default/MLS/services/aes/;../src/config/default/MLS/services/pds/;../src/config/default/MLS/services/sw_timer/;../src/config/default/MLS/sys/;../src/config/default/MLS/tal/;../src/config/default/MLS/tal/sx1276/;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/packs/ATSAMR34J18B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl",
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "isolate-each-function": true,
+                "make-warnings-into-errors": false,
+                "optimization-level": "-Os",
+                "place-data-into-section": true,
+                "post-instruction-scheduling": "default",
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "BOARD_SAMR34_XPRO;ENABLE_PDS=1;HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;_DEBUG_=1",
+                "strict-ansi": false,
+                "support-ansi": false,
+                "tentative-definitions": "-fno-common",
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
+            }
+        },
+        {
+            "name": "SAMR34-C32CPP",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-cpp@v4.35",
+            "properties": {
+                "additional-warnings": false,
+                "addresss-attribute-use": false,
+                "check-new": false,
+                "eh-specs": true,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exceptions": true,
+                "exclude-floating-point": false,
+                "extra-include-directories": "../src;../src/config/default;../src/packs/ATSAMR34J18B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include",
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "isolate-each-function": true,
+                "make-warnings-into-errors": false,
+                "optimization-level": "-O1",
+                "place-data-into-section": false,
+                "post-instruction-scheduling": "default",
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "",
+                "rtti": true,
+                "strict-ansi": false,
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
+            }
+        },
+        {
+            "name": "SAMR34-C32-AS",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-as@v4.35",
+            "properties": {
+                "assembler-symbols": "",
+                "enable-symbols": true,
+                "exclude-floating-point-library": false,
+                "expand-macros": false,
+                "extra-include-directories-for-assembler": "",
+                "extra-include-directories-for-preprocessor": "",
+                "false-conditionals": false,
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "keep-locals": false,
+                "list-assembly": false,
+                "list-source": false,
+                "list-symbols": false,
+                "oXC32asm-list-to-file": false,
+                "omit-debug-dirs": false,
+                "omit-forms": false,
+                "preprocessor-macros": "",
+                "warning-level": ""
+            }
+        },
+        {
+            "name": "SAMR34-C32-AR",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-ar@v4.35",
+            "properties": {
+                "additional-options-chop-files": false
+            }
+        },
+        {
+            "name": "SAMR34-C32-LD",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-ld@v4.35",
+            "properties": {
+                "additional-options-use-response-files": false,
+                "additional-options-write-sla": false,
+                "allocate-dinit": false,
+                "code-dinit": false,
+                "ebase-addr": "",
+                "enable-check-sections": false,
+                "exclude-floating-point-library": false,
+                "exclude-standard-libraries": false,
+                "extra-lib-directories": "",
+                "fill-flash-options-addr": "",
+                "fill-flash-options-const": "",
+                "fill-flash-options-how": "0",
+                "fill-flash-options-inc-const": "1",
+                "fill-flash-options-increment": "",
+                "fill-flash-options-seq": "",
+                "fill-flash-options-what": "0",
+                "generate-16-bit-code": false,
+                "generate-cross-reference-file": true,
+                "generate-micro-compressed-code": false,
+                "heap-size": "1024",
+                "input-libraries": "",
+                "kseg-length": "",
+                "kseg-origin": "",
+                "linker-symbols": "",
+                "map-file": "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",
+                "no-device-startup-code": true,
+                "no-startup-files": false,
+                "oXC32ld-extra-opts": "",
+                "optimization-level": "",
+                "preprocessor-macros": "",
+                "remove-unused-sections": true,
+                "report-memory-usage": true,
+                "serial-length": "",
+                "serial-origin": "",
+                "stack-size": "",
+                "symbol-stripping": "",
+                "trace-symbols": "",
+                "warn-section-align": true
+            }
+        },
+        {
+            "name": "SAMR34-C32-CO",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-co@v4.35",
+            "properties": {
+                "coverage-enable": "",
+                "stack-guidance": false
+            }
+        },
+        {
+            "name": "SAMR34-C32Global",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc32-global@v4.35",
+            "properties": {
+                "common-include-directories": "",
+                "gp-relative-option": "",
+                "legacy-libc": false,
+                "mdtcm": "",
+                "mitcm": "",
+                "mstacktcm": false,
+                "omit-pack-options": "1",
+                "relaxed-math": false,
+                "save-temps": false,
+                "stack-smashing": "",
+                "wpo-lto": false
+            }
+        },
+        {
+            "name": "SAMR34-tool-base",
+            "extend": "tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:generic",
+            "properties": {
+                "communication.speed": "2.000",
+                "programmerToGoFilePath": "D:/Harmony/v2.0.0/Source/lorawan_h3_apps/enddevice_demo/private/firmware/enddevice_demo_sam_r34_xpro.X/debug/default/enddevice_demo_sam_r34_xpro_ptg",
+                "voltagevalue": ""
+            }
+        },
+        {
+            "name": "SAMR34-atmelice",
+            "extend": "SAMR34-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:atmelice",
+            "properties": {
+                "communication.speed": "4.000",
+                "memories.programmemory.ranges": "0x400000-0x5fffff",
+                "programoptions.eraseb4program": false
+            }
+        },
+        {
+            "name": "SAMR34-edbg",
+            "extend": "SAMR34-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:edbg",
+            "properties": {}
+        },
+        {
+            "name": "SAMR34-pickit3",
+            "extend": "SAMR34-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:pickit3",
+            "properties": {
+                "ADC 1": true,
+                "CHANGE NOTICE": true,
+                "COMPARATOR": true,
+                "CTMU": true,
+                "DMA": true,
+                "Freeze All Other Peripherals": true,
+                "I2C1": true,
+                "I2C2": true,
+                "INPUT CAPTURE 1": true,
+                "INPUT CAPTURE 2": true,
+                "INPUT CAPTURE 3": true,
+                "INPUT CAPTURE 4": true,
+                "INPUT CAPTURE 5": true,
+                "INTERRUPT CONTROL": true,
+                "OUTPUT COMPARE 1": true,
+                "OUTPUT COMPARE 2": true,
+                "OUTPUT COMPARE 3": true,
+                "OUTPUT COMPARE 4": true,
+                "OUTPUT COMPARE 5": true,
+                "PARALLEL MASTER/SLAVE PORT": true,
+                "REAL TIME CLOCK": true,
+                "SPI/I2S 1": true,
+                "SPI/I2S 2": true,
+                "TIMER1": true,
+                "TIMER2": true,
+                "TIMER3": true,
+                "TIMER4": true,
+                "TIMER5": true,
+                "ToolFirmwareOption.UseLatestFirmware": true,
+                "UART1": true,
+                "UART2": true,
+                "hwtoolclock.frcindebug": false,
+                "memories.programmemory.end": "0x1d003fff",
+                "memories.programmemory.start": "0x1d000000",
+                "programmertogo.imagename": "",
+                "programoptions.pgmspeed": "2",
+                "programoptions.preserveprogramrange.end": "0x1d003fff",
+                "programoptions.preserveprogramrange.start": "0x1d000000",
+                "programoptions.testmodeentrymethod": "VPPFirst",
+                "programoptions.usehighvoltageonmclr": false,
+                "programoptions.uselvpprogramming": false,
+                "voltagevalue": "3.25"
+            }
+        },
+        {
+            "name": "SAMR34-simulator",
+            "extend": "SAMR34-tool-base",
+            "type": "tool",
+            "provider": "microchip.tool-*:simulator",
+            "properties": {
+                "codecoverage.enabled": "Disable",
+                "codecoverage.enableoutputtofile": false,
+                "codecoverage.outputfile": "",
+                "oscillator.auxfrequency": "120",
+                "oscillator.auxfrequencyunit": "Mega",
+                "oscillator.frequency": "1",
+                "oscillator.frequencyunit": "Mega",
+                "oscillator.rcfrequency": "250",
+                "oscillator.rcfrequencyunit": "Kilo",
+                "periphADC1.altscl": false,
+                "periphADC1.minTacq": "",
+                "periphADC1.tacqunits": "microseconds",
+                "periphADC2.altscl": false,
+                "periphADC2.minTacq": "",
+                "periphADC2.tacqunits": "microseconds",
+                "periphComp1.gte": "gt",
+                "periphComp2.gte": "gt",
+                "periphComp3.gte": "gt",
+                "periphComp4.gte": "gt",
+                "periphComp5.gte": "gt",
+                "periphComp6.gte": "gt",
+                "reset.scl": false,
+                "reset.type": "MCLR",
+                "tracecontrol.include.timestamp": "summarydataenabled",
+                "tracecontrol.select": "0",
+                "tracecontrol.stallontracebufferfull": false,
+                "tracecontrol.timestamp": "0",
+                "tracecontrol.tracebufmax": "546000",
+                "tracecontrol.tracefile": "defmplabxtrace.log",
+                "tracecontrol.traceresetonrun": false,
+                "uart0io.output": "window",
+                "uart0io.outputfile": "",
+                "uart0io.uartioenabled": false,
+                "uart1io.output": "window",
+                "uart1io.outputfile": "",
+                "uart1io.uartioenabled": false,
+                "uart2io.output": "window",
+                "uart2io.outputfile": "",
+                "uart2io.uartioenabled": false,
+                "uart3io.output": "window",
+                "uart3io.outputfile": "",
+                "uart3io.uartioenabled": false,
+                "uart4io.output": "window",
+                "uart4io.outputfile": "",
+                "uart4io.uartioenabled": false,
+                "uart5io.output": "window",
+                "uart5io.outputfile": "",
+                "uart5io.uartioenabled": false,
+                "uart6io.output": "window",
+                "uart6io.outputfile": "",
+                "uart6io.uartioenabled": false,
+                "usart0io.output": "window",
+                "usart0io.outputfile": "",
+                "usart0io.uartioenabled": false,
+                "usart1io.output": "window",
+                "usart1io.outputfile": "",
+                "usart1io.uartioenabled": false,
+                "usart2io.output": "window",
+                "usart2io.outputfile": "",
+                "usart2io.uartioenabled": false,
+                "usart3io.output": "window",
+                "usart3io.outputfile": "",
+                "usart3io.uartioenabled": false,
+                "usart4io.output": "window",
+                "usart4io.outputfile": "",
+                "usart4io.uartioenabled": false,
+                "usartc0io.output": "window",
+                "usartc0io.outputfile": "",
+                "usartc0io.uartioenabled": false,
+                "usartc1io.output": "window",
+                "usartc1io.outputfile": "",
+                "usartc1io.uartioenabled": false,
+                "usartd0io.output": "window",
+                "usartd0io.outputfile": "",
+                "usartd0io.uartioenabled": false,
+                "usartd1io.output": "window",
+                "usartd1io.outputfile": "",
+                "usartd1io.uartioenabled": false,
+                "usarte0io.output": "window",
+                "usarte0io.outputfile": "",
+                "usarte0io.uartioenabled": false,
+                "usarte1io.output": "window",
+                "usarte1io.outputfile": "",
+                "usarte1io.uartioenabled": false,
+                "usarte2io.output": "window",
+                "usarte2io.outputfile": "",
+                "usarte2io.uartioenabled": false,
+                "usartf0io.output": "window",
+                "usartf0io.outputfile": "",
+                "usartf0io.uartioenabled": false,
+                "usartf1io.output": "window",
+                "usartf1io.outputfile": "",
+                "usartf1io.uartioenabled": false,
+                "warningmessagebreakoptions.W0001_CORE_BITREV_MODULO_EN": "report",
+                "warningmessagebreakoptions.W0002_CORE_SECURE_MEMORYACCESS": "report",
+                "warningmessagebreakoptions.W0003_CORE_SW_RESET": "report",
+                "warningmessagebreakoptions.W0004_CORE_WDT_RESET": "report",
+                "warningmessagebreakoptions.W0005_CORE_IOPUW_RESET": "report",
+                "warningmessagebreakoptions.W0006_CORE_CODE_GUARD_PFC_RESET": "report",
+                "warningmessagebreakoptions.W0007_CORE_DO_LOOP_STACK_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0008_CORE_DO_LOOP_STACK_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0009_CORE_NESTED_DO_LOOP_RANGE": "report",
+                "warningmessagebreakoptions.W0010_CORE_SIM32_ODD_WORDACCESS": "report",
+                "warningmessagebreakoptions.W0011_CORE_SIM32_UNIMPLEMENTED_RAMACCESS": "report",
+                "warningmessagebreakoptions.W0012_CORE_STACK_OVERFLOW_RESET": "report",
+                "warningmessagebreakoptions.W0013_CORE_STACK_UNDERFLOW_RESET": "report",
+                "warningmessagebreakoptions.W0014_CORE_INVALID_OPCODE": "report",
+                "warningmessagebreakoptions.W0015_CORE_INVALID_ALT_WREG_SET": "report",
+                "warningmessagebreakoptions.W0016_CORE_STACK_ERROR": "report",
+                "warningmessagebreakoptions.W0017_CORE_ODD_RAMWORDACCESS": "report",
+                "warningmessagebreakoptions.W0018_CORE_UNIMPLEMENTED_RAMACCESS": "report",
+                "warningmessagebreakoptions.W0019_CORE_UNIMPLEMENTED_PROMACCESS": "report",
+                "warningmessagebreakoptions.W0020_CORE_ACCESS_NOTIN_X_SPACE": "report",
+                "warningmessagebreakoptions.W0021_CORE_ACCESS_NOTIN_Y_SPACE": "report",
+                "warningmessagebreakoptions.W0022_CORE_XMODEND_LESS_XMODSRT": "report",
+                "warningmessagebreakoptions.W0023_CORE_YMODEND_LESS_YMODSRT": "report",
+                "warningmessagebreakoptions.W0024_CORE_BITREV_MOD_IS_ZERO": "report",
+                "warningmessagebreakoptions.W0025_CORE_HARD_TRAP": "report",
+                "warningmessagebreakoptions.W0026_CORE_UNIMPLEMENTED_MEMORYACCESS": "report",
+                "warningmessagebreakoptions.W0027_CORE_UNIMPLEMENTED_EDSACCESS": "report",
+                "warningmessagebreakoptions.W0028_TBLRD_WORM_CONFIG_MEMORY": "report",
+                "warningmessagebreakoptions.W0029_TBLRD_DEVICE_ID": "report",
+                "warningmessagebreakoptions.W0030_CORE_UNIMPLEMENTED_MEMORY_ACCESS": "report",
+                "warningmessagebreakoptions.W0031_BSLIM_INSUFFICIENT_BOOT_SEGMENT": "report",
+                "warningmessagebreakoptions.W0032_BSLIM_LIMITS_EXCEEDS_PROG_MEMORY": "report",
+                "warningmessagebreakoptions.W0033_CORE_UNPREDICTABLE_OPCODE": "report",
+                "warningmessagebreakoptions.W0034_CORE_UNALIGNED_MEMORY_ACCESS": "report",
+                "warningmessagebreakoptions.W0035_CORE_UNIMPLEMENTED_RAMACCESS_NOTRAP": "report",
+                "warningmessagebreakoptions.W0040_FPU_DIFF_CP10_CP11": "report",
+                "warningmessagebreakoptions.W0041_FPU_ACCESS_DENIED": "report",
+                "warningmessagebreakoptions.W0042_FPU_PRIVILEGED_ACCESS_ONLY": "report",
+                "warningmessagebreakoptions.W0043_FPU_CP_RESERVED_VALUE": "report",
+                "warningmessagebreakoptions.W0044_FPU_OUT_OF_RANGE": "report",
+                "warningmessagebreakoptions.W0051_INSTRUCTION_DIV_NOT_ENOUGH_REPEAT": "report",
+                "warningmessagebreakoptions.W0052_INSTRUCTION_DIV_TOO_MANY_REPEAT": "report",
+                "warningmessagebreakoptions.W0053_INVALID_INTCON_VS_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0101_SIM_UPDATE_FAILED": "report",
+                "warningmessagebreakoptions.W0102_SIM_PERIPH_MISSING": "report",
+                "warningmessagebreakoptions.W0103_SIM_PERIPH_FAILED": "report",
+                "warningmessagebreakoptions.W0104_SIM_FAILED_TO_INIT_TOOL": "report",
+                "warningmessagebreakoptions.W0105_SIM_INVALID_FIELD": "report",
+                "warningmessagebreakoptions.W0106_SIM_PERIPH_PARTIAL_SUPPORT": "report",
+                "warningmessagebreakoptions.W0107_SIM_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0108_SIM_RESERVED_SETTING": "report",
+                "warningmessagebreakoptions.W0109_SIM_PERIPHERAL_IN_DEVELOPMENT": "report",
+                "warningmessagebreakoptions.W0110_SIM_UNEXPECTED_EVENT": "report",
+                "warningmessagebreakoptions.W0111_SIM_UNSUPPORTED_SELECTION": "report",
+                "warningmessagebreakoptions.W0112_SIM_INVALID_OPERATION": "report",
+                "warningmessagebreakoptions.W0113_SIM_WRITE_TO_PROTECTED_SFR": "report",
+                "warningmessagebreakoptions.W0114_SIM_INVALID_KEY": "report",
+                "warningmessagebreakoptions.W0115_SIM_FAILED_TO_PARSE_DEVICE_FILE": "report",
+                "warningmessagebreakoptions.W0116_SIM_STACK_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0117_SIM_STACK_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0118_SIM_INVALID_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0119_SIM_SAMPLING_RATE_VIOLATION": "report",
+                "warningmessagebreakoptions.W0201_ADC_NO_STIMULUS_FILE": "report",
+                "warningmessagebreakoptions.W0202_ADC_GO_DONE_BIT": "report",
+                "warningmessagebreakoptions.W0203_ADC_MINIMUM_2_TAD": "report",
+                "warningmessagebreakoptions.W0204_ADC_TAD_TOO_SMALL": "report",
+                "warningmessagebreakoptions.W0205_ADC_UNEXPECTED_TRANSITION": "report",
+                "warningmessagebreakoptions.W0206_ADC_SAMP_TIME_TOO_SHORT": "report",
+                "warningmessagebreakoptions.W0207_ADC_NO_PINS_SCANNED": "report",
+                "warningmessagebreakoptions.W0208_ADC_UNSUPPORTED_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W0209_ADC_ANALOG_CHANNEL_DIGITAL": "report",
+                "warningmessagebreakoptions.W0210_ADC_ANALOG_CHANNEL_OUTPUT": "report",
+                "warningmessagebreakoptions.W0211_ADC_PIN_INVALID_CHANNEL": "report",
+                "warningmessagebreakoptions.W0212_ADC_BAND_GAP_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0213_ADC_RESERVED_SSRC": "report",
+                "warningmessagebreakoptions.W0214_ADC_POSITIVE_INPUT_DIGITAL": "report",
+                "warningmessagebreakoptions.W0215_ADC_POSITIVE_INPUT_OUTPUT": "report",
+                "warningmessagebreakoptions.W0216_ADC_NEGATIVE_INPUT_DIGITAL": "report",
+                "warningmessagebreakoptions.W0217_ADC_NEGATIVE_INPUT_OUTPUT": "report",
+                "warningmessagebreakoptions.W0218_ADC_REFERENCE_HIGH_DIGITAL": "report",
+                "warningmessagebreakoptions.W0219_ADC_REFERENCE_HIGH_OUTPUT": "report",
+                "warningmessagebreakoptions.W0220_ADC_REFERENCE_LOW_DIGITAL": "report",
+                "warningmessagebreakoptions.W0221_ADC_REFERENCE_LOW_OUTPUT": "report",
+                "warningmessagebreakoptions.W0222_ADC_OVERFLOW": "report",
+                "warningmessagebreakoptions.W0223_ADC_UNDERFLOW": "report",
+                "warningmessagebreakoptions.W0224_ADC_CTMU_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0225_ADC_INVALID_CH0S": "report",
+                "warningmessagebreakoptions.W0226_ADC_VBAT_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0227_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0228_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0229_ADC_INVALID_ADCS": "report",
+                "warningmessagebreakoptions.W0230_ADC_TRIGSEL_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0231_ADC_NOT_WARMED": "report",
+                "warningmessagebreakoptions.W0232_ADC_CALIBRATION_ABORTED": "report",
+                "warningmessagebreakoptions.W0233_ADC_CORE_POWERED_EARLY": "report",
+                "warningmessagebreakoptions.W0234_ADC_ALREADY_CALIBRATING": "report",
+                "warningmessagebreakoptions.W0235_ADC_CAL_TYPE_CHANGED": "report",
+                "warningmessagebreakoptions.W0236_ADC_CAL_INVALIDATED": "report",
+                "warningmessagebreakoptions.W0237_ADC_UNKNOWN_DATASHEET": "report",
+                "warningmessagebreakoptions.W0238_ADC_INVALID_SFR_FIELD_VALUE": "report",
+                "warningmessagebreakoptions.W0239_ADC_UNSUPPORTED_INPUT": "report",
+                "warningmessagebreakoptions.W0240_ADC_NOT_CALIBRATED": "report",
+                "warningmessagebreakoptions.W0241_ADC_FRACTIONAL_NOT_ALLOWED": "report",
+                "warningmessagebreakoptions.W0242_ADC_BG_INT_BEFORE_PWR": "report",
+                "warningmessagebreakoptions.W0243_ADC_INVALID_TAD": "report",
+                "warningmessagebreakoptions.W0244_ADC_CONVERSION_ABORTED": "report",
+                "warningmessagebreakoptions.W0245_ADC_BUFREGEN_NOT_ALLOWED": "report",
+                "warningmessagebreakoptions.W0246_ADC_ACCUMULATION_BAD_RESSEL": "report",
+                "warningmessagebreakoptions.W0247_ADC_CONVERSION_BAD_RESSEL": "report",
+                "warningmessagebreakoptions.W0248_ADC_WR_BEFORE_KEY_SEQ": "report",
+                "warningmessagebreakoptions.W0400_PWM_PWM_FASTER_THAN_FOSC": "report",
+                "warningmessagebreakoptions.W0600_WDT_2ND_WDT_MR_WRITE": "report",
+                "warningmessagebreakoptions.W0601_WDT_EXPIRED": "report",
+                "warningmessagebreakoptions.W0601_WDT_RESET_OUTSIDE_WINDOW": "report",
+                "warningmessagebreakoptions.W0700_CLC_GENERAL_WARNING": "report",
+                "warningmessagebreakoptions.W0701_CLC_CLCOUT_AS_INPUT": "report",
+                "warningmessagebreakoptions.W0702_CLC_CIRCULAR_LOOP": "report",
+                "warningmessagebreakoptions.W0800_ACC_INPUT_INVALID_CONFIG": "report",
+                "warningmessagebreakoptions.W0801_ACC_INPUT_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W0802_ACC_INVERTED_WINDOW_LIMITS": "report",
+                "warningmessagebreakoptions.W0803_ACC_MISMATCHED_POS_INPUTS": "report",
+                "warningmessagebreakoptions.W0804_ACC_WINDOW_COMP_DISABLED": "report",
+                "warningmessagebreakoptions.W0805_ACC_WINDOW_COMPS_MODES": "report",
+                "warningmessagebreakoptions.W0806_ACC_FEATURE_NOT_SUPPORTED": "report",
+                "warningmessagebreakoptions.W10001_RESERVED_IRQ_HANDLER_INVOKED": "report",
+                "warningmessagebreakoptions.W10002_UNSUPPORTED_CLK_SOURCE": "report",
+                "warningmessagebreakoptions.W10101_UNSUPPORTED_CHANNEL_MODE": "report",
+                "warningmessagebreakoptions.W10102_UNSUPPORTED_CLK_SOURCE": "report",
+                "warningmessagebreakoptions.W10103_UNSUPPORTED_RECEIVER_FILTER": "report",
+                "warningmessagebreakoptions.W10301_NO_PORT_PINS_FOUND": "report",
+                "warningmessagebreakoptions.W10500_UNSUPPORTED_SOURCE": "report",
+                "warningmessagebreakoptions.W1201_DATAFLASH_MEM_OUTSIDE_RANGE": "report",
+                "warningmessagebreakoptions.W1202_DATAFLASH_ERASE_WHILE_LOCKED": "report",
+                "warningmessagebreakoptions.W1203_DATAFLASH_WRITE_WHILE_LOCKED": "report",
+                "warningmessagebreakoptions.W1401_DMA_PERIPH_NOT_AVAIL": "report",
+                "warningmessagebreakoptions.W1402_DMA_INVALID_IRQ": "report",
+                "warningmessagebreakoptions.W1403_DMA_INVALID_SFR": "report",
+                "warningmessagebreakoptions.W1404_DMA_INVALID_DMA_ADDR": "report",
+                "warningmessagebreakoptions.W1405_DMA_IRQ_DIR_MISMATCH": "report",
+                "warningmessagebreakoptions.W1600_PPS_INVALID_MAP": "report",
+                "warningmessagebreakoptions.W1601_PPS_INVALID_PIN_DESCRIPTION": "report",
+                "warningmessagebreakoptions.W1800_PWM_TIMER_SELECTION_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W1801_PWM_TIMER_SELECTION_BAD_CLOCK_INPUT": "report",
+                "warningmessagebreakoptions.W1802_PWM_TIMER_MISSING_PERSCALER_INFO": "report",
+                "warningmessagebreakoptions.W2001_INPUTCAPTURE_TMR3_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W2002_INPUTCAPTURE_CAPTURE_EMPTY": "report",
+                "warningmessagebreakoptions.W2003_INPUTCAPTURE_SYNCSEL_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W2004_INPUTCAPTURE_BAD_SYNC_SOURCE": "report",
+                "warningmessagebreakoptions.W2501_OUTPUTCOMPARE_SYNCSEL_NOT_AVIALABLE": "report",
+                "warningmessagebreakoptions.W2502_OUTPUTCOMPARE_BAD_SYNC_SOURCE": "report",
+                "warningmessagebreakoptions.W2503_OUTPUTCOMPARE_BAD_TRIGGER_SOURCE": "report",
+                "warningmessagebreakoptions.W2700_MPU_ILLEGAL_DREGION": "report",
+                "warningmessagebreakoptions.W2701_MPU_INVALID_REGION": "report",
+                "warningmessagebreakoptions.W3000_LPM_READ_PROTECTION_SECTION": "report",
+                "warningmessagebreakoptions.W3010_SPM_WRITE_PROTECTION_SECTION": "report",
+                "warningmessagebreakoptions.W6001_RTT_FORBIDDEN_RTPRES": "report",
+                "warningmessagebreakoptions.W6002_RTT_BAD_WRITING_ALMV": "report",
+                "warningmessagebreakoptions.W6003_RTT_BAD_WRITING_RTPRES": "report",
+                "warningmessagebreakoptions.W7001_SMT_CLK_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W7002_SMT_SIG_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W7003_SMT_WIN_SELECTION_NOT_SUPPORT": "report",
+                "warningmessagebreakoptions.W8001_OSC_INVALID_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W8002_OSC_RESERVED_FEXTOSC": "report",
+                "warningmessagebreakoptions.W9001_TMR_GATE_AND_EXTCLOCK_ENABLED": "report",
+                "warningmessagebreakoptions.W9002_TMR_NO_PIN_AVAILABLE": "report",
+                "warningmessagebreakoptions.W9003_TMR_INVALID_CLOCK_SOURCE": "report",
+                "warningmessagebreakoptions.W9201_UART_TX_OVERFLOW": "report",
+                "warningmessagebreakoptions.W9202_UART_TX_CAPTUREFILE": "report",
+                "warningmessagebreakoptions.W9203_UART_TX_INVALIDINTERRUPTMODE": "report",
+                "warningmessagebreakoptions.W9204_UART_RX_EMPTY_QUEUE": "report",
+                "warningmessagebreakoptions.W9205_UART_TX_BADFILE": "report",
+                "warningmessagebreakoptions.W9206_UART_RESERVED_MODE": "report",
+                "warningmessagebreakoptions.W9207_UART_UNABLETOCLOSE_FILE": "report",
+                "warningmessagebreakoptions.W9401_CVREF_INVALIDSOURCESELECTION": "report",
+                "warningmessagebreakoptions.W9402_CVREF_INPUT_OUTPUTPINCONFLICT": "report",
+                "warningmessagebreakoptions.W9601_COMP_FVR_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9602_COMP_DAC_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9603_COMP_CVREF_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9604_COMP_SLOPE_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9605_COMP_PRG_SOURCE_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9607_COMP_DGTL_FLTR_OPTION_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9609_COMP_DGTL_FLTR_CLK_UNAVAILABLE": "report",
+                "warningmessagebreakoptions.W9801_FVR_INVALID_MODE_SELECTION": "report",
+                "warningmessagebreakoptions.W9801_SCL_BAD_SUBTYPE_INDICATION": "report",
+                "warningmessagebreakoptions.W9802_SCL_FILE_NOT_FOUND": "report",
+                "warningmessagebreakoptions.W9803_SCL_FAILED_TO_READ_FILE": "report",
+                "warningmessagebreakoptions.W9804_SCL_UNRECOGNIZED_LABEL": "report",
+                "warningmessagebreakoptions.W9805_SCL_UNRECOGNIZED_VAR": "report",
+                "warningmessagebreakoptions.W9901_RTSP_INVALID_OPERATION_SELECTION": "report",
+                "warningmessagebreakoptions.W9902_RTSP_FLASH_PROGRAM_WRITE_PROTECTED": "report",
+                "warningmessagebreakoptions.displaywarningmessagesoption": "",
+                "warningmessagebreakoptions.warningmessages": "holdstate"
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "root",
+            "contains": [
+                "Header Files",
+                "Important Files",
+                "Linker Files",
+                "Source Files"
+            ]
+        },
+        {
+            "name": "Header Files",
+            "contains": [
+                "config",
+                "packs",
+                "wolfcrypt"
+            ],
+            "files": [
+                "../src/app.h",
+                "../src/config/default/mls_app.h",
+                "../../../source/enddevice_demo.h",
+                "../../../source/temperature_sensor.h",
+                "../src/app_user_if.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "config",
+            "contains": [
+                "default"
+            ]
+        },
+        {
+            "name": "default",
+            "contains": [
+                "library",
+                "MLS",
+                "osal",
+                "peripheral",
+                "system"
+            ],
+            "files": [
+                "../src/config/default/device_cache.h",
+                "../src/config/default/toolchain_specifics.h",
+                "../src/config/default/definitions.h",
+                "../src/config/default/device.h",
+                "../src/config/default/user.h",
+                "../src/config/default/configuration.h",
+                "../src/config/default/interrupts.h",
+                "../src/config/default/device_vectors.h",
+                "../src/config/default/config.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "library",
+            "contains": [
+                "cryptoauthlib"
+            ]
+        },
+        {
+            "name": "cryptoauthlib",
+            "contains": [
+                "atcacert",
+                "calib",
+                "crypto",
+                "hal",
+                "host",
+                "jwt",
+                "tng"
+            ],
+            "files": [
+                "../src/config/default/library/cryptoauthlib/atca_config.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "atcacert"
+        },
+        {
+            "name": "calib"
+        },
+        {
+            "name": "crypto",
+            "contains": [
+                "hashes"
+            ]
+        },
+        {
+            "name": "hashes"
+        },
+        {
+            "name": "hal"
+        },
+        {
+            "name": "host"
+        },
+        {
+            "name": "jwt"
+        },
+        {
+            "name": "tng",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/tng/tflxtls_cert_def_4_device.h",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_1_signer.h",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_2_device.h",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_4_device.h",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.h",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_2_device.h",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_3_device.h",
+                "../src/config/default/library/cryptoauthlib/tng/tng_atca.h",
+                "../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.h",
+                "../src/config/default/library/cryptoauthlib/tng/tng_root_cert.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "MLS",
+            "contains": [
+                "common",
+                "hal_2",
+                "mac",
+                "module_config",
+                "pmm",
+                "private",
+                "regparams",
+                "sal",
+                "services",
+                "sys",
+                "tal"
+            ]
+        },
+        {
+            "name": "common",
+            "files": [
+                "../src/config/default/MLS/common/stack_common.h",
+                "../src/config/default/MLS/common/mls.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "hal_2",
+            "files": [
+                "../src/config/default/MLS/hal/radio_driver_hal.h",
+                "../src/config/default/MLS/hal/sleep.h",
+                "../src/config/default/MLS/hal/sleep_timer.h",
+                "../src/config/default/MLS/hal/sys.h",
+                "../src/config/default/MLS/hal/atomic.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "mac",
+            "files": [
+                "../src/config/default/MLS/mac/lorawan.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "module_config",
+            "files": [
+                "../src/config/default/MLS/module_config/conf_radio.h",
+                "../src/config/default/MLS/module_config/conf_regparams.h",
+                "../src/config/default/MLS/module_config/conf_sal.h",
+                "../src/config/default/MLS/module_config/conf_pmm.h",
+                "../src/config/default/MLS/module_config/conf_sw_timer.h",
+                "../src/config/default/MLS/module_config/conf_stack.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pmm",
+            "files": [
+                "../src/config/default/MLS/pmm/pmm.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "private",
+            "contains": [
+                "mac_2"
+            ]
+        },
+        {
+            "name": "mac_2",
+            "files": [
+                "../src/config/default/MLS/private/mac/lorawan_defs.h",
+                "../src/config/default/MLS/private/mac/lorawan_mcast.h",
+                "../src/config/default/MLS/private/mac/lorawan_pds.h",
+                "../src/config/default/MLS/private/mac/lorawan_private.h",
+                "../src/config/default/MLS/private/mac/lorawan_radio.h",
+                "../src/config/default/MLS/private/mac/lorawan_task_handler.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "regparams",
+            "contains": [
+                "multiband"
+            ],
+            "files": [
+                "../src/config/default/MLS/regparams/lorawan_reg_params.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "multiband",
+            "files": [
+                "../src/config/default/MLS/regparams/multiband/lorawan_multiband.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sal",
+            "files": [
+                "../src/config/default/MLS/sal/sal.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "services",
+            "contains": [
+                "aes",
+                "pds",
+                "sw_timer"
+            ]
+        },
+        {
+            "name": "aes",
+            "files": [
+                "../src/config/default/MLS/services/aes/aes_engine.h",
+                "../src/config/default/MLS/services/aes/aes_def.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pds",
+            "files": [
+                "../src/config/default/MLS/services/pds/pds_interface.h",
+                "../src/config/default/MLS/services/pds/pds_wl.h",
+                "../src/config/default/MLS/services/pds/pds_nvm.h",
+                "../src/config/default/MLS/services/pds/pds_task_handler.h",
+                "../src/config/default/MLS/services/pds/pds_common.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sw_timer",
+            "files": [
+                "../src/config/default/MLS/services/sw_timer/sw_timer.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sys",
+            "files": [
+                "../src/config/default/MLS/sys/system_assert.h",
+                "../src/config/default/MLS/sys/system_init.h",
+                "../src/config/default/MLS/sys/system_task_manager.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tal",
+            "contains": [
+                "sx1276"
+            ],
+            "files": [
+                "../src/config/default/MLS/tal/radio_interface.h",
+                "../src/config/default/MLS/tal/radio_get_set.h",
+                "../src/config/default/MLS/tal/radio_task_manager.h",
+                "../src/config/default/MLS/tal/radio_transaction.h",
+                "../src/config/default/MLS/tal/radio_lbt.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sx1276",
+            "files": [
+                "../src/config/default/MLS/tal/sx1276/radio_driver_SX1276.h",
+                "../src/config/default/MLS/tal/sx1276/radio_registers_SX1276.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "osal",
+            "files": [
+                "../src/config/default/osal/osal.h",
+                "../src/config/default/osal/osal_definitions.h",
+                "../src/config/default/osal/osal_impl_basic.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "peripheral",
+            "contains": [
+                "adc",
+                "clock",
+                "eic",
+                "evsys",
+                "nvic",
+                "nvmctrl",
+                "pm",
+                "port",
+                "rstc",
+                "rtc",
+                "sercom",
+                "supc",
+                "systick",
+                "tc"
+            ]
+        },
+        {
+            "name": "adc",
+            "files": [
+                "../src/config/default/peripheral/adc/plib_adc_common.h",
+                "../src/config/default/peripheral/adc/plib_adc.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "clock",
+            "files": [
+                "../src/config/default/peripheral/clock/plib_clock.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "eic",
+            "files": [
+                "../src/config/default/peripheral/eic/plib_eic.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "evsys",
+            "files": [
+                "../src/config/default/peripheral/evsys/plib_evsys.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "nvic",
+            "files": [
+                "../src/config/default/peripheral/nvic/plib_nvic.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "nvmctrl",
+            "files": [
+                "../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pm",
+            "files": [
+                "../src/config/default/peripheral/pm/plib_pm.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "port",
+            "files": [
+                "../src/config/default/peripheral/port/plib_port.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "rstc",
+            "files": [
+                "../src/config/default/peripheral/rstc/plib_rstc.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "rtc",
+            "files": [
+                "../src/config/default/peripheral/rtc/plib_rtc.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sercom",
+            "contains": [
+                "i2c_master",
+                "spi_master",
+                "usart"
+            ]
+        },
+        {
+            "name": "i2c_master",
+            "files": [
+                "../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h",
+                "../src/config/default/peripheral/sercom/i2c_master/plib_sercom1_i2c_master.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "spi_master",
+            "files": [
+                "../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.h",
+                "../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "usart",
+            "files": [
+                "../src/config/default/peripheral/sercom/usart/plib_sercom0_usart.h",
+                "../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h",
+                "../src/config/default/peripheral/sercom/usart/plib_sercom3_usart.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "supc",
+            "files": [
+                "../src/config/default/peripheral/supc/plib_supc.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "systick",
+            "files": [
+                "../src/config/default/peripheral/systick/plib_systick.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tc",
+            "files": [
+                "../src/config/default/peripheral/tc/plib_tc_common.h",
+                "../src/config/default/peripheral/tc/plib_tc0.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "system",
+            "contains": [
+                "int",
+                "reset"
+            ]
+        },
+        {
+            "name": "int",
+            "files": [
+                "../src/config/default/system/int/sys_int.h",
+                "../src/config/default/system/int/sys_int_mapping.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "reset",
+            "files": [
+                "../src/config/default/system/reset/sys_reset.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "packs",
+            "contains": [
+                "CMSIS"
+            ]
+        },
+        {
+            "name": "CMSIS",
+            "contains": [
+                "CMSIS_2"
+            ]
+        },
+        {
+            "name": "CMSIS_2",
+            "contains": [
+                "Core"
+            ]
+        },
+        {
+            "name": "Core",
+            "contains": [
+                "Include"
+            ]
+        },
+        {
+            "name": "Include",
+            "files": [
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h",
+                "../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "wolfcrypt",
+            "contains": [
+                "port_2"
+            ],
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/arc4.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/asn.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/asn_public.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/blake2-impl.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/blake2-int.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/blake2.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/camellia.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/chacha.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/chacha20_poly1305.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/cmac.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/coding.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/compress.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/cpuid.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/cryptocb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/curve25519.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/curve448.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/des3.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/dh.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/dsa.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ecc.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ed25519.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ed448.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/error-crypt.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_448.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_operations.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/fips_test.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ge_448.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ge_operations.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/hash.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/hc128.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/hmac.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/idea.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/integer.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/logging.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/md2.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/md4.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/md5.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/memory.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/mem_track.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/misc.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/mpi_class.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/mpi_superclass.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs11.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs12.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs7.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/poly1305.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/pwdbased.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/rabbit.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/random.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/ripemd.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/rsa.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/selftest.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sha3.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/signature.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sp.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sp_int.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/srp.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/tfm.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/types.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/visibility.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_encrypt.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_pkcs11.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/wolfevent.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/wolfmath.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/settings.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/aes.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sha.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sha256.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/sha512.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_port.h",
+                "../src/third_party/wolfssl/wolfssl/certs_test.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/rc2.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "port_2",
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/pic32mz-crypt.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_cf_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ClearFlags_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Comp_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_CondCopy_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_CRT_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Div_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ExpMod_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_FastCopy_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Fill_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Fmult_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GCD_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccAdd_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccConv_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccDbl_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEccMul_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_GF2NEcDsa_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Hardware_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Headers_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_JumpTable_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_mapping_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_PrimeGen_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Rc_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_RedMod_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Rng_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_SelfTest_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Services_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Smult_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Square_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_Swap_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_typedef_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccAddSub_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccAdd_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccConv_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccDbl_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccMul_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEccQuickDualMul_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/CryptoLib_ZpEcDsa_pb.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_hwInt.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_sam6149.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_aes_u2238.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_crya_saml11.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_ecc_ba414e.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_ecc_pukcl.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_pukcl_definitions.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_pukcl_functions.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_rng_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_rsa_pukcl.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha1_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha224_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha256_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha384_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha512_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_sam11105.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_sha_sam6156.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_hw.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_hwInt.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_tdes_sam6150.h",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "Important Files",
+            "contains": [
+                "default.mhc",
+                "wolfcrypt_2"
+            ],
+            "files": [
+                "Makefile",
+                "../src/config/default/harmony-manifest-success.yml",
+                "../src/config/default/harmony-manifest-failure.yml",
+                "enddevice_demo_sam_r34_xpro.mc3"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "default.mhc",
+            "files": [
+                "../src/config/default/default.mhc/adc.yml",
+                "../src/config/default/default.mhc/atecc608.yml",
+                "../src/config/default/default.mhc/cmsis.yml",
+                "../src/config/default/default.mhc/core.yml",
+                "../src/config/default/default.mhc/cryptoauthlib.yml",
+                "../src/config/default/default.mhc/cryptoauthlib_tng.yml",
+                "../src/config/default/default.mhc/dfp.yml",
+                "../src/config/default/default.mhc/eic.yml",
+                "../src/config/default/default.mhc/evsys.yml",
+                "../src/config/default/default.mhc/GraphSettings.yml",
+                "../src/config/default/default.mhc/HarmonyCore.yml",
+                "../src/config/default/default.mhc/lib_wolfcrypt.yml",
+                "../src/config/default/default.mhc/MLS_SRC.yml",
+                "../src/config/default/default.mhc/nvmctrl.yml",
+                "../src/config/default/default.mhc/pm.yml",
+                "../src/config/default/default.mhc/project.yml",
+                "../src/config/default/default.mhc/rstc.yml",
+                "../src/config/default/default.mhc/rtc.yml",
+                "../src/config/default/default.mhc/sercom0.yml",
+                "../src/config/default/default.mhc/sercom1.yml",
+                "../src/config/default/default.mhc/sercom4.yml",
+                "../src/config/default/default.mhc/settings.yml",
+                "../src/config/default/default.mhc/stdio.yml",
+                "../src/config/default/default.mhc/supc.yml",
+                "../src/config/default/default.mhc/tc0.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "wolfcrypt_2",
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "Linker Files",
+            "contains": [
+                "config_2"
+            ],
+            "translator": "toolchain:linker"
+        },
+        {
+            "name": "config_2",
+            "contains": [
+                "default_2"
+            ]
+        },
+        {
+            "name": "default_2",
+            "files": [
+                "../src/config/default/ATSAMR34J18B.ld"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "Source Files",
+            "contains": [
+                "config_3",
+                "wolfcrypt_3"
+            ],
+            "files": [
+                "../src/main.c",
+                "../src/app.c",
+                "../src/config/default/mls_app.c",
+                "../../../source/enddevice_demo.c",
+                "../../../source/temperature_sensor.c",
+                "../src/app_user_if.c"
+            ],
+            "encoding": "ISO-8859-1",
+            "translator": "toolchain:compiler"
+        },
+        {
+            "name": "config_3",
+            "contains": [
+                "default_3"
+            ]
+        },
+        {
+            "name": "default_3",
+            "contains": [
+                "library_2",
+                "MLS_2",
+                "peripheral_2",
+                "stdio",
+                "system_2"
+            ],
+            "files": [
+                "../src/config/default/initialization.c",
+                "../src/config/default/interrupts.c",
+                "../src/config/default/exceptions.c",
+                "../src/config/default/startup_xc32.c",
+                "../src/config/default/libc_syscalls.c",
+                "../src/config/default/tasks.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "library_2",
+            "contains": [
+                "cryptoauthlib_2"
+            ]
+        },
+        {
+            "name": "cryptoauthlib_2",
+            "contains": [
+                "atcacert_2",
+                "calib_2",
+                "crypto_2",
+                "hal_3",
+                "host_2",
+                "jwt_2",
+                "tng_2"
+            ],
+            "files": [
+                "../src/config/default/library/cryptoauthlib/atca_basic.c",
+                "../src/config/default/library/cryptoauthlib/atca_basic.h",
+                "../src/config/default/library/cryptoauthlib/atca_bool.h",
+                "../src/config/default/library/cryptoauthlib/atca_cfgs.c",
+                "../src/config/default/library/cryptoauthlib/atca_cfgs.h",
+                "../src/config/default/library/cryptoauthlib/atca_compiler.h",
+                "../src/config/default/library/cryptoauthlib/atca_debug.c",
+                "../src/config/default/library/cryptoauthlib/atca_debug.h",
+                "../src/config/default/library/cryptoauthlib/atca_device.c",
+                "../src/config/default/library/cryptoauthlib/atca_device.h",
+                "../src/config/default/library/cryptoauthlib/atca_devtypes.h",
+                "../src/config/default/library/cryptoauthlib/atca_helpers.c",
+                "../src/config/default/library/cryptoauthlib/atca_helpers.h",
+                "../src/config/default/library/cryptoauthlib/atca_iface.c",
+                "../src/config/default/library/cryptoauthlib/atca_iface.h",
+                "../src/config/default/library/cryptoauthlib/atca_status.h",
+                "../src/config/default/library/cryptoauthlib/atca_utils_sizes.c",
+                "../src/config/default/library/cryptoauthlib/atca_version.h",
+                "../src/config/default/library/cryptoauthlib/cryptoauthlib.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "atcacert_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_client.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_client.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_der.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_der.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_hw.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_hw.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_sw.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_sw.h",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.c",
+                "../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "calib_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/calib/calib_aes.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.h",
+                "../src/config/default/library/cryptoauthlib/calib/calib_basic.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_basic.h",
+                "../src/config/default/library/cryptoauthlib/calib/calib_checkmac.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_command.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_command.h",
+                "../src/config/default/library/cryptoauthlib/calib/calib_counter.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_derivekey.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_ecdh.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_execution.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_execution.h",
+                "../src/config/default/library/cryptoauthlib/calib/calib_gendig.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_genkey.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_helpers.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_hmac.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_info.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_kdf.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_lock.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_mac.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_nonce.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_privwrite.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_random.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_read.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_secureboot.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_selftest.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_sha.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_sign.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_updateextra.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_verify.c",
+                "../src/config/default/library/cryptoauthlib/calib/calib_write.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "crypto_2",
+            "contains": [
+                "hashes_2"
+            ],
+            "files": [
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbc.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cmac.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ctr.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_pbkdf2.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw.h",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_ecdsa.h",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_rand.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_rand.h",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c",
+                "../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "hashes_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/crypto/hashes/sha1_routines.c",
+                "../src/config/default/library/cryptoauthlib/crypto/hashes/sha1_routines.h",
+                "../src/config/default/library/cryptoauthlib/crypto/hashes/sha2_routines.c",
+                "../src/config/default/library/cryptoauthlib/crypto/hashes/sha2_routines.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "hal_3",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/hal/ATECC608_0.c",
+                "../src/config/default/library/cryptoauthlib/hal/atca_hal.c",
+                "../src/config/default/library/cryptoauthlib/hal/atca_hal.h",
+                "../src/config/default/library/cryptoauthlib/hal/atca_start_config.h",
+                "../src/config/default/library/cryptoauthlib/hal/atca_start_iface.h",
+                "../src/config/default/library/cryptoauthlib/hal/hal_i2c_harmony.c",
+                "../src/config/default/library/cryptoauthlib/hal/hal_harmony_init.c",
+                "../src/config/default/library/cryptoauthlib/hal/hal_cortex_m_delay.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "host_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/host/atca_host.c",
+                "../src/config/default/library/cryptoauthlib/host/atca_host.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "jwt_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/jwt/atca_jwt.c",
+                "../src/config/default/library/cryptoauthlib/jwt/atca_jwt.h"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tng_2",
+            "files": [
+                "../src/config/default/library/cryptoauthlib/tng/tflxtls_cert_def_4_device.c",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_1_signer.c",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_2_device.c",
+                "../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_4_device.c",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.c",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_2_device.c",
+                "../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_3_device.c",
+                "../src/config/default/library/cryptoauthlib/tng/tng_atca.c",
+                "../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.c",
+                "../src/config/default/library/cryptoauthlib/tng/tng_root_cert.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "MLS_2",
+            "contains": [
+                "hal_4",
+                "pmm_2",
+                "private_2",
+                "regparams_2",
+                "sal_2",
+                "services_2",
+                "sys_2",
+                "tal_3"
+            ]
+        },
+        {
+            "name": "hal_4",
+            "files": [
+                "../src/config/default/MLS/hal/radio_driver_hal.c",
+                "../src/config/default/MLS/hal/sys.c",
+                "../src/config/default/MLS/hal/sleep.c",
+                "../src/config/default/MLS/hal/sleep_timer.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pmm_2",
+            "files": [
+                "../src/config/default/MLS/pmm/pmm.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "private_2",
+            "contains": [
+                "mac_3",
+                "tal_2"
+            ]
+        },
+        {
+            "name": "mac_3",
+            "files": [
+                "../src/config/default/MLS/private/mac/lorawan.c",
+                "../src/config/default/MLS/private/mac/lorawan_classc.c",
+                "../src/config/default/MLS/private/mac/lorawan_mcast.c",
+                "../src/config/default/MLS/private/mac/lorawan_pds.c",
+                "../src/config/default/MLS/private/mac/lorawan_task_handler.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tal_2",
+            "files": [
+                "../src/config/default/MLS/private/tal/radio_get_set.c",
+                "../src/config/default/MLS/private/tal/radio_task_manager.c",
+                "../src/config/default/MLS/private/tal/radio_transaction.c",
+                "../src/config/default/MLS/private/tal/radio_lbt.c",
+                "../src/config/default/MLS/private/tal/radio_interface.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "regparams_2",
+            "contains": [
+                "multiband_2"
+            ]
+        },
+        {
+            "name": "multiband_2",
+            "files": [
+                "../src/config/default/MLS/regparams/multiband/lorawan_multiband.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_eu.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_na.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_au.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_as.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_kr.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_jp.c",
+                "../src/config/default/MLS/regparams/multiband/lorawan_mband_in.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sal_2",
+            "files": [
+                "../src/config/default/MLS/sal/sal.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "services_2",
+            "contains": [
+                "aes_2",
+                "pds_2",
+                "sw_timer_2"
+            ]
+        },
+        {
+            "name": "aes_2",
+            "contains": [
+                "hw_aes_wc"
+            ]
+        },
+        {
+            "name": "hw_aes_wc",
+            "files": [
+                "../src/config/default/MLS/services/aes/hw_aes_wc/aes_engine.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pds_2",
+            "files": [
+                "../src/config/default/MLS/services/pds/pds_wl.c",
+                "../src/config/default/MLS/services/pds/pds_nvm.c",
+                "../src/config/default/MLS/services/pds/pds_interface.c",
+                "../src/config/default/MLS/services/pds/pds_task_handler.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sw_timer_2",
+            "files": [
+                "../src/config/default/MLS/services/sw_timer/sw_timer.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sys_2",
+            "files": [
+                "../src/config/default/MLS/sys/system_assert.c",
+                "../src/config/default/MLS/sys/system_init.c",
+                "../src/config/default/MLS/sys/system_task_manager.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tal_3",
+            "contains": [
+                "sx1276_2"
+            ]
+        },
+        {
+            "name": "sx1276_2",
+            "files": [
+                "../src/config/default/MLS/tal/sx1276/radio_driver_sx1276.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "peripheral_2",
+            "contains": [
+                "adc_2",
+                "clock_2",
+                "eic_2",
+                "evsys_2",
+                "nvic_2",
+                "nvmctrl_2",
+                "pm_2",
+                "port_3",
+                "rstc_2",
+                "rtc_2",
+                "sercom_2",
+                "supc_2",
+                "systick_2",
+                "tc_2"
+            ]
+        },
+        {
+            "name": "adc_2",
+            "files": [
+                "../src/config/default/peripheral/adc/plib_adc.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "clock_2",
+            "files": [
+                "../src/config/default/peripheral/clock/plib_clock.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "eic_2",
+            "files": [
+                "../src/config/default/peripheral/eic/plib_eic.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "evsys_2",
+            "files": [
+                "../src/config/default/peripheral/evsys/plib_evsys.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "nvic_2",
+            "files": [
+                "../src/config/default/peripheral/nvic/plib_nvic.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "nvmctrl_2",
+            "files": [
+                "../src/config/default/peripheral/nvmctrl/plib_nvmctrl.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "pm_2",
+            "files": [
+                "../src/config/default/peripheral/pm/plib_pm.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "port_3",
+            "files": [
+                "../src/config/default/peripheral/port/plib_port.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "rstc_2",
+            "files": [
+                "../src/config/default/peripheral/rstc/plib_rstc.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "rtc_2",
+            "files": [
+                "../src/config/default/peripheral/rtc/plib_rtc_timer.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "sercom_2",
+            "contains": [
+                "i2c_master_2",
+                "spi_master_2",
+                "usart_2"
+            ]
+        },
+        {
+            "name": "i2c_master_2",
+            "files": [
+                "../src/config/default/peripheral/sercom/i2c_master/plib_sercom1_i2c_master.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "spi_master_2",
+            "files": [
+                "../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "usart_2",
+            "files": [
+                "../src/config/default/peripheral/sercom/usart/plib_sercom0_usart.c",
+                "../src/config/default/peripheral/sercom/usart/plib_sercom3_usart.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "supc_2",
+            "files": [
+                "../src/config/default/peripheral/supc/plib_supc.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "systick_2",
+            "files": [
+                "../src/config/default/peripheral/systick/plib_systick.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "tc_2",
+            "files": [
+                "../src/config/default/peripheral/tc/plib_tc0.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "stdio",
+            "files": [
+                "../src/config/default/stdio/xc32_monitor.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "system_2",
+            "contains": [
+                "int_2",
+                "reset_2"
+            ]
+        },
+        {
+            "name": "int_2",
+            "files": [
+                "../src/config/default/system/int/src/sys_int.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "reset_2",
+            "files": [
+                "../src/config/default/system/reset/sys_reset.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "wolfcrypt_3",
+            "contains": [
+                "port_4"
+            ],
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/arc4.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/asm.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/asn.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2b.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2s.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/camellia.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha20_poly1305.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cmac.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/coding.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/compress.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cpuid.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cryptocb.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve25519.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve448.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/dh.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/dsa.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc_fp.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed25519.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed448.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/error.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_448.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_low_mem.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_operations.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_448.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_low_mem.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_operations.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hash.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hc128.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hmac.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/idea.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/integer.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/logging.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md2.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md4.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md5.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/memory.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs12.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs7.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/poly1305.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/pwdbased.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rabbit.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ripemd.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rsa.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha3.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/signature.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm32.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm64.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_armthumb.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c32.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c64.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_cortexm.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_dsp32.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_int.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_x86_64.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/srp.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/tfm.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_dsp.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_encrypt.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_pkcs11.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_port.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfevent.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfmath.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/aes.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/des3.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/random.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha256.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha512.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "port_4",
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/pic32mz-crypt.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_sam6149.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_u2238.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_ba414e.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_pukcl.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_pukcl_functions.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_sam6334.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_u2242.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rsa_pukcl.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sam_u2803.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam11105.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam6156.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam11105.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam6156.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam11105.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam6156.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha384_sam6156.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha512_sam6156.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_tdes_sam6150.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_wolfcryptcb.c"
+            ],
+            "encoding": "ISO-8859-1"
+        }
+    ]
+}

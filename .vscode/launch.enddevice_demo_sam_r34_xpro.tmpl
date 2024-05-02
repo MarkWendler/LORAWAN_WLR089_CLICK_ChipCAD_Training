@@ -1,0 +1,20 @@
+{
+        "version":"0.2.0",
+        "configurations":[
+        {		    
+			"macroprefixes": [
+				"%%1*${projectname}.mplab-configurations.json",
+				"%%2*settings.json"		
+			],  
+            "name": "",          
+            "servertype": "jlink",
+            "type": "cortex-debug",
+            "cwd": "${workspaceRoot}",
+            "request": "launch",            
+            "executable": "%%1configurations[name,default]*outputFiles[name,build]*imagePath",            
+            "interface": "swd",            
+            "device": "%%1configurations[name,default]*targetDevice",
+            "serverpath": "%%2cortex-debug.JLinkGDBServerPath",			
+            "armToolchainPath": "%%2cortex-debug.armToolchainPath"            
+        }
+    ]}
