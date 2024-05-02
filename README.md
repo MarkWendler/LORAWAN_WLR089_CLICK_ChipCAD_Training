@@ -4,7 +4,7 @@ https://github.com/MicrochipTech/ATSAMR34_LORAWAN_H3
 
 Harmony 3 configurator does not work with this project. The original project is based on Harmony 3 framework, then modified manually to add sercom3 and make it compatible with new compiler and WLR089.
 
-Target board WLR089-click from ChipCAD Ltd. (https://www.chipcad.hu/)
+Target board is WLR089-click from ChipCAD Ltd. (https://www.chipcad.hu/)
 ![Alt text](resources/wlr089_click_main.png)
 
 1. Download and install [MPLAB® X IDE v6.15 tested](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
